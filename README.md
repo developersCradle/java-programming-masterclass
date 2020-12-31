@@ -16,13 +16,13 @@ Insert certificate here when completed
 - [ ] Section 03 - First Steps
 - [ ] Section 04 - Java Tutorial: Expressions, Statements, Code blocks, Methods and more
 - [ ] Section 05 - Control Flow Statements
-- [o] Section 06 - OOP Part 1 - Classes, Constructors and Inheritance
-- [o] Section 07 - OOP Part 2 - Composition, Encapsulation, and Polymorphism
-- [o] Section 08 - Arrays, Java inbuilt Lists, Autoboxing and Unboxing
+- [ ] Section 06 - OOP Part 1 - Classes, Constructors and Inheritance
+- [ ] Section 07 - OOP Part 2 - Composition, Encapsulation, and Polymorphism
+- [ ] Section 08 - Arrays, Java inbuilt Lists, Autoboxing and Unboxing
 - [x] Section 09 - Inner and Abstract Classes & Interfaces
 - [x] Section 10 - Java Generics
-- [o] Section 11 - Naming Conventions and Packages. static and final keywords
-- [o] Section 12 - Java Collections
+- [ ] Section 11 - Naming Conventions and Packages. static and final keywords
+- [ ] Section 12 - Java Collections
 - [ ] Section 13 - JavaFX
 - [ ] Section 14 - Basic Input & Output including java.util
 - [ ] Section 15 - Concurrency in Java

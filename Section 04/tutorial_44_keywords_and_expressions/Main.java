@@ -17,42 +17,6 @@ public class Main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // In the following code that I will type below, write down what parts of the code
         // are expressions.
         int score = 100;

@@ -1,18 +1,12 @@
-# TodoSofta
+#Section 4: Java Tutorial: Expressions, Statements, Code blocks, Methods and more
 
-Small demonstration  project of the To-Do list.
-.war runnable by tomacat
-
-![Image of program](kuva1.PNG)
-
-![Image of programs edit form](kuva2.PNG)
-
+What is expressions, code block etc...
 
 # What I Learned
-
-* Improved clearifying what should be focused in tight time frame
-* Adapting to use sqlLite,Jsp(java), bootstrap
-* Also having fun, dumping technologies together
+* Clarifying expressions and code block
+* Indentation is for making clearer code
+* [Reserved keywords](https://en.wikipedia.org/wiki/List_of_Java_keywords) 
+* Using {} after if (personally) make block more clearer  
 
 
 

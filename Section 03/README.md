@@ -4,5 +4,6 @@ All the ingredient what first steps needs
 
 # What I Learned
 * Clarifying meanings of different primitive types
+* Refresh on casting operation
 
 

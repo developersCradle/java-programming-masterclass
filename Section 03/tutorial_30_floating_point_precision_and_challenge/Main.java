@@ -21,6 +21,8 @@ public class Main {
 		System.out.println("MyFloatValue= " + myFloatValue);
 		System.out.println("MyDoubleValue= " + myDoubleValue);
 
+		
+
 		/* Challenge
 		 * 
 		 * Convert  given number of pounds to kilograms.
@@ -34,5 +36,11 @@ public class Main {
 		 *
 		 *  HINT: 1 pound is equals to 0.45359237 of kilogram. This should help you perform the calculation
 		 */
+		
+		double pounds = 200.00D;
+		double calculatedInKg =  pounds * 0.45359237d;  //Not for precise calculations, we need use BigDecimal
+		System.out.println("Challange calculated in kg " + calculatedInKg);
+		
+		
 	}
 }

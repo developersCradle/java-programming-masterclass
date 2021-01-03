@@ -15,10 +15,10 @@ Insert certificate here when completed
 
 - [x] [Section 01](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2001) - Course Introduction
 - [X] Section 02 - Software Tools Setup
-- [x] Section 03 - First Steps
-- [ ] Section 04 - Java Tutorial: Expressions, Statements, Code blocks, Methods and more
+- [x] [Section 03](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2003) - First Steps
+- [ ] [Section 04](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2004) - Java Tutorial: Expressions, Statements, Code blocks, Methods and more
 - [ ] Section 05 - Control Flow Statements
-- [ ] Section 06 - OOP Part 1 - Classes, Constructors and Inheritance
+- [ ] [Section 06](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2006) - OOP Part 1 - Classes, Constructors and Inheritance
 - [ ] Section 07 - OOP Part 2 - Composition, Encapsulation, and Polymorphism
 - [ ] Section 08 - Arrays, Java inbuilt Lists, Autoboxing and Unboxing
 - [x] Section 09 - Inner and Abstract Classes & Interfaces

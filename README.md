@@ -13,7 +13,7 @@ Insert certificate here when completed
 
 - [x] Section 01 - Course Introduction
 - [X] Section 02 - Software Tools Setup
-- [ ] Section 03 - First Steps
+- [x] Section 03 - First Steps
 - [ ] Section 04 - Java Tutorial: Expressions, Statements, Code blocks, Methods and more
 - [ ] Section 05 - Control Flow Statements
 - [ ] Section 06 - OOP Part 1 - Classes, Constructors and Inheritance

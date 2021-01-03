@@ -6,7 +6,8 @@ What is expressions, code block etc...
 * Clarifying expressions and code block
 * Indentation is for making clearer code
 * [Reserved keywords](https://en.wikipedia.org/wiki/List_of_Java_keywords) 
-* Using {} after if (personally) make block more clearer  
+* Using {} after if (personally) make block more clearer 
+* In programming when returning terms -1 is usually returned indicating invalid value or value not found
 
 
 

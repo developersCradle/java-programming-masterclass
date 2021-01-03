@@ -8,6 +8,7 @@ What is expressions, code block etc...
 * [Reserved keywords](https://en.wikipedia.org/wiki/List_of_Java_keywords) 
 * Using {} after if (personally) make block more clearer 
 * In programming when returning terms -1 is usually returned indicating invalid value or value not found
-
+* void method can be called a procedure
+	* procedure meaning return type void
 
 

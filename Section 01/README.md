@@ -1,6 +1,6 @@
 # Section 1: Course Introduction
 
-What is needed to be programmer in general and in life general
+What is needed to be programmer in general.
 
 # What I Learned
 * [Work ethics](https://en.wikipedia.org/wiki/List_of_Java_keywords)

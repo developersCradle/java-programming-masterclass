@@ -10,5 +10,9 @@ What is expressions, code block etc...
 * In programming when returning terms -1 is usually returned indicating invalid value or value not found
 * void method can be called a procedure
 	* procedure meaning return type void
+* There is many ways to solve particular problem
+* [DiffMerge](https://sourcegear.com/diffmerge/downloads.php) 
+* Method Overloading improves readability and re-usability
+* println() method is good example of good method overloading 
 
 

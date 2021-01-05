@@ -12,7 +12,8 @@ What is expressions, code block etc...
 	* procedure meaning return type void
 * There is many ways to solve particular problem
 * [DiffMerge](https://sourcegear.com/diffmerge/downloads.php) 
+* [MetricConversion](https://www.metric-conversions.org/length/feet-to-centimeters.html) 
 * Method Overloading improves readability and re-usability
 * println() method is good example of good method overloading 
-
+* First get solution working, then come optimization part
 

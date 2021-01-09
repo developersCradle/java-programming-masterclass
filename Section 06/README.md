@@ -12,3 +12,7 @@ First OOP parts
 * When creating class, we need initialize it 
 * For class default state is `null`
 	* String also a class, there fore it has also default `null`
+* () calls class constructor
+* In constructor you should not methods to keep it minimal
+* super should be used inside constructor when constructing
+  extendended class 

@@ -1,4 +1,4 @@
-package tutorial_80_inheritance;
+package tutorial_81_inheritance;
 
 public class Animal {
 

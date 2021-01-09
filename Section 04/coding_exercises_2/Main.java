@@ -1,4 +1,4 @@
-package tutorial_57_megabytes_converter;
+package coding_exercises_2;
 
 /*
  * * printMegaBytesAndKiloBytes(2500);  should print the following text: "2500 KB = 2 MB and 452 KB"

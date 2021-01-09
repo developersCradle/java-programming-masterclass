@@ -1,4 +1,4 @@
-package tutorial_57_megabytes_converter;
+package coding_exercises_2;
 /*
  * Write a method called printMegaBytesAndKiloBytes that has 1 parameter of type int with the name kiloBytes.
 

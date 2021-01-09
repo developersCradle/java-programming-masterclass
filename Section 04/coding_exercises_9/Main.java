@@ -1,4 +1,4 @@
-package tutorial_62_minutes_to_years_and_days_calculator;
+package coding_exercises_9;
 
 
 public class Main {

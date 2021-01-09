@@ -1,4 +1,4 @@
-package tutorial_62_area_calculator;
+package coding_exercises_8;
 
 
 public class Main {

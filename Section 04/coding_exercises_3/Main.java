@@ -1,4 +1,4 @@
-package tutorial_57_barking_dog;
+package coding_exercises_3;
 
 /*
  *

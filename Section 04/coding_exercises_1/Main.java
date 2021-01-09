@@ -1,4 +1,4 @@
-package tutorial_57_coding_exercise_part_3_speed_converter;
+package coding_exercises_1;
 
 
 public class Main {

@@ -1,4 +1,4 @@
-package tutorial_62_Equality_Printer;
+package coding_exercises_10;
 /*
  * Write a method printEqual with 3 parameters of type int. The method should not return anything (void).
 

@@ -1,4 +1,4 @@
-package tutorial_62_Equality_Printer;
+package coding_exercises_10;
 
 
 public class Main {

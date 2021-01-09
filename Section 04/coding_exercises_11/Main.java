@@ -1,4 +1,4 @@
-package tutorial_62_playing_cat;
+package coding_exercises_11;
 
 /*
 * isCatPlaying(true, 10); should return false since temperature is not in range 25 - 45 

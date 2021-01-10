@@ -11,8 +11,24 @@ public class Main {
 		
 		
 		String alphanumeric = "abcDeeeF12Ghhiiiijkl99z";
-		 System.out.println(alphanumeric.replaceAll(".","Y"));
-		 
-		 //4.00
-	}
+		System.out.println(alphanumeric.replaceAll(".","Y"));
+		
+		
+		System.out.println(alphanumeric.replaceAll("^abcDeee",  "YYY"));
+		
+		String secondString = "abcDeeeF12GhhabcDeeeiiiijkl99z";
+		System.out.println(secondString.replaceAll("^abcDeee",  "YYY"));
+		
+		System.out.println(alphanumeric.matches("^hello"));
+		System.out.println(alphanumeric.matches("^abcDeee"));//false whole string need to be matched
+		System.out.println(alphanumeric.matches("abcDeeeF12Ghhiiiijkl99z"));//Whole string needed to match when using matches
+		System.out.println(alphanumeric.matches("^abcDeeeF12Ghhiiiijkl99z"));//Whole string needed to match when using matches
+		
+		System.out.println(alphanumeric.replaceAll("ijkl99z$",  "THE END"));
+		System.out.println(alphanumeric.replaceAll("[aei]",  "X"));
+		System.out.println(alphanumeric.replaceAll("[aei]",  "I replaced a letter here"));
+		
+		System.out.println(alphanumeric.replaceAll("[aei][Fj]",  "X"));
+		
+	} 
 }

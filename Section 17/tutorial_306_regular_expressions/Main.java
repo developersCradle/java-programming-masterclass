@@ -1,4 +1,4 @@
-package tutorial_306;
+package tutorial_306_regular_expressions;
 
 public class Main {
 

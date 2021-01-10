@@ -23,3 +23,6 @@ Regular expressions exploration
 		* a,e,i is being replaced with X
 	* `System.out.println(alphanumeric.replaceAll("[aei][Fj]",  "X"));`
 		* Looks for "aei" followed by "Fj", only then replaces with X
+* `tem.out.println("harry".replaceAll("[Hh]arry",  "Harry"));``
+	* Looks for "harry" or "Harry" and puts uppercase "Harry"
+	*Character classes and Boundary Matchers palaa kun 

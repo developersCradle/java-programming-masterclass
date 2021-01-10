@@ -19,7 +19,7 @@ Regular expressions exploration
 	* Must match as whole string to regex, otherwise return false
 * $ Boundary matcher, proceeded by pattern
 * [] to match exact letters, looks for each individual character
-	*`System.out.println(alphanumeric.replaceAll("[aei]",  "X"));`
+	* `System.out.println(alphanumeric.replaceAll("[aei]",  "X"));`
 		* a,e,i is being replaced with X
-	*`System.out.println(alphanumeric.replaceAll("[aei][Fj]",  "X"));`
+	* `System.out.println(alphanumeric.replaceAll("[aei][Fj]",  "X"));`
 		* Looks for "aei" followed by "Fj", only then replaces with X

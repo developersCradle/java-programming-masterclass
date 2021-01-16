@@ -35,6 +35,7 @@ public class Main {
 		
 		String NewAlphanumeric = "abcDeeeF12Ghhiiiijkl99z";
 		System.out.println(NewAlphanumeric.replaceAll("[^ej]", "X"));
-		//3:20
+		//3:20 Palaa kun palaat
+		
 	} 
 }

@@ -1,4 +1,4 @@
-package tutorial_90_composition;
+package tutorial_92_composition_part_2;
 
 public class Dimensions {
     private int width;

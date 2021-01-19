@@ -1,8 +1,5 @@
-package tutorial_90_composition;
+package tutorial_92_composition_part_2;
 
-/**
- * Created by dev on 8/3/15.
- */
 public class Motherboard {
 
     private String model;

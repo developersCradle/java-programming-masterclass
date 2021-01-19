@@ -1,4 +1,4 @@
-package tutorial_94_polymorphism;
+package tutorial_95_polymorphism;
 
 
 class Movie {

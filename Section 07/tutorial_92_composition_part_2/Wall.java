@@ -1,4 +1,4 @@
-package tutorial_91_composition_part2;
+package tutorial_92_composition_part_2;
 
 public class Wall {
     private String direction;

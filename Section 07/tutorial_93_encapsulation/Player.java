@@ -1,5 +1,4 @@
-package tutorial_92_encapsulation;
-
+package tutorial_93_encapsulation;
 
 
 public class Player {

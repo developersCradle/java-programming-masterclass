@@ -7,4 +7,8 @@ Second OOP parts
 	* PC
 		* HAS-A Monitor
 * One object have references to other objects
+* Composition is one master object
+	* Under one master object there is many child objects
+* `getClass().getSimpleName()` gets class name
+* Object class gives alot of functionality for your class
 	

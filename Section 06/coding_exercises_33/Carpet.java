@@ -2,7 +2,7 @@ package coding_exercises_33;
 
 public class Carpet {
 
-	double cost;
+	private double cost;
 
 	public Carpet(double cost) {
 		if (cost < 0) {
@@ -11,4 +11,9 @@ public class Carpet {
 			this.cost = cost;
 		}
 	}
+
+	public double getCost() {
+		return cost;
+	}
+
 }

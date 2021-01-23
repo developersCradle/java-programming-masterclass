@@ -2,8 +2,8 @@ package coding_exercises_33;
 
 public class Floor {
 
-	double width;
-	double length;
+	private double width;
+	private double length;
 
 	//In case the width parameter is less than 0 it needs to set the width field value to 0, in case the length parameter is less than 0 it needs to set the length field value to 0.
 	public Floor(double width, double length) {

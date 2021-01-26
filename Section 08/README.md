@@ -30,4 +30,4 @@ Arrays, Java inbuilt Lists, Autoboxing and Unboxing
 	* This can be solved by linkedList
 		* Every element has link to another
 		
-<img src="file://linkedList.png" alt="alt text" width="200"/>
+<img src="file://linkedList.PNG" alt="alt text" width="200"/>

@@ -1,4 +1,4 @@
-package tutorial_99_arrays_challenge;
+package tutorial_100_arrays_challenge;
 
 import java.util.Arrays;
 import java.util.Scanner;

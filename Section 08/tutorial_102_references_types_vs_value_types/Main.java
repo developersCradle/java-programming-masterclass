@@ -1,4 +1,4 @@
-package tutorial_101_referenceTypes;
+package tutorial_102_references_types_vs_value_types;
 
 
 import java.util.Arrays;

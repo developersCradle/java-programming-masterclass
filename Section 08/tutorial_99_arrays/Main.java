@@ -1,4 +1,4 @@
-package tutorial_98_arrays;
+package tutorial_99_arrays;
 
 import java.util.Scanner;
 

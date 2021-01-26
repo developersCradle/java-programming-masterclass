@@ -1,4 +1,4 @@
-package tutorial_106_arraylist;
+package tutorial_106_and_107_arraylist;
 
 
 import java.util.ArrayList;

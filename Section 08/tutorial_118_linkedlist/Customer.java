@@ -1,4 +1,4 @@
-package tutorial_116_linkedlisttttt;
+package tutorial_118_linkedlist;
 
 
 public class Customer {

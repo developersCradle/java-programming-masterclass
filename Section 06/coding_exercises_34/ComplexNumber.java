@@ -50,22 +50,39 @@ NOTE: In total, you have to write 6 methods.
 
 NOTE: Do not add a main method to the solution code.
  */
-public class ComplexNumber {//TODO jäin  add with two parametners
-
-	double imaginary;
-	double real;
-
-	public double getImaginary() {
-		return imaginary;
-	}
-
-	public double getReal() {
-		return real;
-	}
-
-	public ComplexNumber(double imaginary, double real) {
-		this.imaginary = imaginary;
-		this.real = real;
-	}
-
+public class ComplexNumber {
+    private double real;
+    private double imaginary;
+ 
+    public ComplexNumber(double real, double imaginary) {
+        this.real = real;
+        this.imaginary = imaginary;
+    }
+ 
+    public double getReal() {
+        return this.real;
+    }
+ 
+    public double getImaginary() {
+        return this.imaginary;
+    }
+ 
+    public void add(double real, double imaginary) {
+        this.real += real;
+        this.imaginary += imaginary;
+    }
+ 
+    public void add(ComplexNumber complexNumber) {
+        add(complexNumber.getReal(), complexNumber.getImaginary());
+    }
+ 
+    public void subtract(double real, double imaginary) {
+        this.real -= real;
+        this.imaginary -= imaginary;
+    }
+ 
+    public void subtract(ComplexNumber complexNumber) {
+        subtract(complexNumber.getReal(), complexNumber.getImaginary());
+    }
 }
+

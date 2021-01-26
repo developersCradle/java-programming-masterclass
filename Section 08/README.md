@@ -28,6 +28,5 @@ Arrays, Java inbuilt Lists, Autoboxing and Unboxing
 	* With Strings 8 bytes, but this time its pointer to another place
 * ArrayList is slow when adding element into middle
 	* This can be solved by linkedList
-		* Every element has link to another
-		
-<img src="file://linkedList.PNG" alt="alt text" width="200"/>
+		* Every element has link to another	
+		* <img src="linkedList.PNG" alt="alt text" width="200"/>

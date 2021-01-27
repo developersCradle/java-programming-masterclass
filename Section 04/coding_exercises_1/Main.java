@@ -1,5 +1,6 @@
 package coding_exercises_1;
 
+import coding_exercises_37.SpeedConverter;
 
 public class Main {
 

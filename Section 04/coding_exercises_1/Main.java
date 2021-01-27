@@ -1,7 +1,5 @@
 package coding_exercises_1;
 
-import coding_exercises_47.SpeedConverter;
-
 public class Main {
 
     public static void main(String[] args) {

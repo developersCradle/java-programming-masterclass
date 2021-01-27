@@ -1,4 +1,4 @@
-package tutorial_123_interfaces_part_2;
+package tutorial_123_interfaces;
 
 public class DeskPhone implements ITelephone {
 

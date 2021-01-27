@@ -1,4 +1,4 @@
-package tutorial_126_inner_classes;
+package tutorial_126_inner_classes12321;
 
 public class Main {
 

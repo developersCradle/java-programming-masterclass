@@ -1,4 +1,4 @@
-package tutorial_122_interfaces;
+package tutorial_123_interfaces;
 
 public class Main {
 

@@ -42,7 +42,7 @@ Arrays, Java inbuilt Lists, Autoboxing and Unboxing
 	* When want add or remove lot of data, also good when sorting
 * Java has implemented LinkedList as double linked list
 	* References forward and backwards are stored
-
+* Exceptions should be processed in some manner
 	
 	
 TEE AUTO BOXING TUTORIALS

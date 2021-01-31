@@ -1,4 +1,4 @@
-## Java In-Depth Become a Complete Java Engineer!
+## Java Programming Masterclass for Software Developers 
 
 ![JAVA ENGINEER](pic.jpg)
 

@@ -1,4 +1,4 @@
-package tutorial_136_our_generic_class;
+package tutorial_138_our_generic_class_part2;
 
 public class BaseballPlayer extends Player{
 

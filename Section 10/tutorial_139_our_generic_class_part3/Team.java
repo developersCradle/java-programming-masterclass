@@ -1,11 +1,9 @@
-package tutorial_138_our_generic_class_part3;
+package tutorial_139_our_generic_class_part3;
 
 
 import java.util.ArrayList;
 
-/**
- * Created by dev on 17/10/2015.
- */
+
 public class Team<T extends Player> implements Comparable<Team<T>> {//Generic type to generic interface
     private String name;
     int played = 0;

@@ -1,12 +1,9 @@
-package tutorial_137_our_generic_class_part2;
-
+package tutorial_140_our_generic_class_challenge;
 
 import java.util.ArrayList;
 
-/**
- * Created by dev on 17/10/2015.
- */
-public class Team<T extends Player> {
+
+public class Team<T extends Player> implements Comparable<Team<T>> {//Generic type to generic interface
     private String name;
     int played = 0;
     int won = 0;
@@ -65,27 +62,21 @@ public class Team<T extends Player> {
         return (won * 2) + tied;
     }
 
+	@Override
+	public int compareTo(Team<T> team) {
+
+		
+		if (this.ranking() >  team.ranking()) {
+			return -1;
+		}
+		else if(this.ranking() < team.ranking())
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

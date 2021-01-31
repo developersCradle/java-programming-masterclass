@@ -22,7 +22,7 @@ Insert certificate here when completed
 - [ ] [Section 07](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2007) - OOP Part 2 - Composition, Encapsulation, and Polymorphism
 - [ ] [Section 08](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2008) - Arrays, Java inbuilt Lists, Autoboxing and Unboxing
 - [x] [Section 09](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2009) - Inner and Abstract Classes & Interfaces
-- [x] Section 10 - Java Generics
+- [x] [Section 10](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2010) - Java Generics
 - [ ] Section 11 - Naming Conventions and Packages. static and final keywords
 - [ ] Section 12 - Java Collections
 - [ ] Section 13 - JavaFX

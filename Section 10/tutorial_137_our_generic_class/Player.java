@@ -1,4 +1,4 @@
-package tutorial_139_our_generic_class_challenge;
+package tutorial_137_our_generic_class;
 
 public abstract class Player {
 	

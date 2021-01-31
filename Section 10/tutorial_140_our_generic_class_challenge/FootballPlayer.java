@@ -1,4 +1,4 @@
-package tutorial_138_our_generic_class_part3;
+package tutorial_140_our_generic_class_challenge;
 
 public class FootballPlayer extends Player{
 

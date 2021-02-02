@@ -3,6 +3,8 @@ package tutorial_140_our_generic_class_challenge;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import tutorial_151_final_statement.Team;
+
 
 // Create a generic class to implement a league table for a sport.
 // The class should allow teams to be added to the list, and store

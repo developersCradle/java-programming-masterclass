@@ -2,6 +2,9 @@ package tutorial_140_our_generic_class_challenge;
 
 import java.util.ArrayList;
 
+import tutorial_151_final_statement.Player;
+import tutorial_151_final_statement.Team;
+
 
 public class Team<T extends Player> implements Comparable<Team<T>> {//Generic type to generic interface
     private String name;

@@ -1,6 +1,10 @@
 
 package tutorial_140_our_generic_class_challenge;
 
+import tutorial_151_final_statement.BaseballPlayer;
+import tutorial_151_final_statement.FootballPlayer;
+import tutorial_151_final_statement.League;
+import tutorial_151_final_statement.Team;
 
 public class Main {
 

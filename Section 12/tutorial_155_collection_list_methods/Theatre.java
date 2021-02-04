@@ -1,11 +1,11 @@
-package tutorial_153_binary_search;
+package tutorial_155_collection_list_methods;
 
 
 import java.util.*;
 
 public class Theatre {
     private final String theatreName;
-    private List<Seat> seats = new ArrayList<>();
+    public List<Seat> seats = new ArrayList<>();
 
     public Theatre(String theatreName, int numRows, int seatsPerRow) {
         this.theatreName = theatreName;
@@ -52,7 +52,7 @@ public class Theatre {
         }
     }
 
-    private class Seat implements Comparable<Seat> {
+    public class Seat implements Comparable<Seat> {
         private final String seatNumber;
         private boolean reserved = false;
 
@@ -61,7 +61,7 @@ public class Theatre {
         }
 
         @Override
-        public int compareTo(Seat seat) {//Framework uses this to compare
+        public int compareTo(Seat seat) {
             return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber());
         }
 

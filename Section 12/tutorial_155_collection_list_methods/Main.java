@@ -1,4 +1,4 @@
-package tutorial_154_collection_list_methods;
+package tutorial_155_collection_list_methods;
 
 
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class Main {
     public static void sortList(List<? extends Theatre.Seat> list) {
         for(int i=0; i<list.size() -1; i++) {
             for(int j=i+1; j<list.size(); j++) {
-                if(list.get(i).compareTo(list.get(j)) >0) {
+                if(list.get(i).compareTo(list.get(j)) > 0) {
                     Collections.swap(list, i, j);
                 }
             }

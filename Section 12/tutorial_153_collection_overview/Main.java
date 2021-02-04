@@ -1,4 +1,5 @@
-package tutorial_153_binary_search;
+package tutorial_153_collection_overview;
+
 
 
 public class Main {
@@ -6,15 +7,15 @@ public class Main {
     public static void main(String[] args) {
 	    Theatre theatre = new Theatre("Olympian", 8, 12);
 //        theatre.getSeats();
-        if(theatre.reserveSeat("B13")) {
+        if(theatre.reserveSeat("H11")) {
             System.out.println("Please pay");
         } else {
             System.out.println("Sorry, seat is taken");
         }
-//        if(theatre.reserveSeat("H11")) {
-//            System.out.println("Please pay");
-//        } else {
-//            System.out.println("Sorry, seat is taken");
-//        }
+        if(theatre.reserveSeat("H11")) {
+            System.out.println("Please pay");
+        } else {
+            System.out.println("Sorry, seat is taken");
+        }
     }
 }

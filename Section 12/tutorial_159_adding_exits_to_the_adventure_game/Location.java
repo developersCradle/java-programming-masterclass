@@ -1,4 +1,4 @@
-package tutorial_158_adding_exits_to_the_adventure_game;
+package tutorial_159_adding_exits_to_the_adventure_game;
 
 
 import java.util.HashMap;

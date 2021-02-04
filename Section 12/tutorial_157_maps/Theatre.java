@@ -1,7 +1,8 @@
-package tutorial_157_map_continued_and_adventure_game;
+package tutorial_157_maps;
 
 
 import java.util.*;
+
 
 public class Theatre {
     private final String theatreName;

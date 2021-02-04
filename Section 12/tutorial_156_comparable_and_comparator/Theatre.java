@@ -1,15 +1,22 @@
-package tutorial_156_maps;
+package tutorial_156_comparable_and_comparator;
 
 
 import java.util.*;
-
 
 public class Theatre {
     private final String theatreName;
     private List<Seat> seats = new ArrayList<>();
 
-    static final Comparator<Seat> PRICE_ORDER;
-
+    static final Comparator<Seat> PRICE_ORDER; //Comparator object
+    /*
+      
+      1 = seat1 < seat2
+      -1 = seat1 > seat2
+      0 = if equal
+      
+     */
+    
+    
     static {
         PRICE_ORDER = new Comparator<Seat>() {
             @Override

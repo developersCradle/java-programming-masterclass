@@ -1,4 +1,4 @@
-package tutorial_155_comparable_and_comparator;
+package tutorial_158_map_continued_and_adventure_game;
 
 
 import java.util.*;
@@ -7,16 +7,8 @@ public class Theatre {
     private final String theatreName;
     private List<Seat> seats = new ArrayList<>();
 
-    static final Comparator<Seat> PRICE_ORDER; //Comparator object
-    /*
-      
-      1 = seat1 < seat2
-      -1 = seat1 > seat2
-      0 = if equal
-      
-     */
-    
-    
+    static final Comparator<Seat> PRICE_ORDER;
+
     static {
         PRICE_ORDER = new Comparator<Seat>() {
             @Override

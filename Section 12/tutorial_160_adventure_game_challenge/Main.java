@@ -1,4 +1,4 @@
-package tutorial_159_adventure_game_challenge;
+package tutorial_160_adventure_game_challenge;
 
 
 import java.util.HashMap;
@@ -69,7 +69,7 @@ public class Main {
             String direction = scanner.nextLine().toUpperCase();
            
             
-            if (direction.length() > 1) {
+            if (direction.length() > 1) { // More than 1 character command
 				String[] split = direction.split(" ");
 				
 				for (String entry : split) {

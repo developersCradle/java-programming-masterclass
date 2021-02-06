@@ -1,8 +1,9 @@
-package tutorial_157_map_continued_and_adventure_game_game_itself;
+package tutorial_160_adventure_game_challenge;
 
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class Location {
     private final int locationID;
@@ -13,6 +14,7 @@ public class Location {
         this.locationID = locationID;
         this.description = description;
         this.exits = new HashMap<String, Integer>();
+        this.exits.put("Q", 0);
     }
 
     public void addExit(String direction, int location) {
@@ -27,10 +29,6 @@ public class Location {
     }
 
     public Map<String, Integer> getExits() {
-        return new HashMap<String, Integer>(exits); 
-        /*
-         * Nothing outside of our class canno't change our exits. We create new copy of exits for 3rd party
-         * 	- This is one technique to make our class immutable
-         */
+        return new HashMap<String, Integer>(exits);
     }
 }

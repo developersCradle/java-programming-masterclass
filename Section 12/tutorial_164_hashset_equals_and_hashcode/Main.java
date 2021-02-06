@@ -1,4 +1,4 @@
-package tutorial_163_hashset_equals_and_hashcode;
+package tutorial_164_hashset_equals_and_hashcode;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package tutorial_161_immutable_classes_challenge;
+package tutorial_161_immutable_classes;
 
 /*
  * Immutable is recommended 
@@ -27,14 +27,7 @@ public class Location {
     public Location(int locationID, String description, Map<String, Integer> exits) {
         this.locationID = locationID;
         this.description = description;
-//        this.exit = new HashMap<String, Integer>(exits);//error here, if null
-        if (exits != null) {
-        	this.exits = new HashMap<String, Integer>(exits);
-			
-		}else {
-        	this.exits = new HashMap<String, Integer>();
-		}
-        
+        this.exits = new HashMap<String, Integer>(exits);
         this.exits.put("Q", 0);
     }
     

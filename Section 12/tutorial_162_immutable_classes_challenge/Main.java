@@ -1,4 +1,4 @@
-package tutorial_161_immutable_classes_challenge;
+package tutorial_162_immutable_classes_challenge;
 
 
 import java.util.HashMap;

@@ -1,9 +1,8 @@
-package tutorial_159_adventure_game_challenge;
+package tutorial_159_tutorial_adding_exits_to_the_adventure;
 
 
 import java.util.HashMap;
 import java.util.Map;
-
 
 public class Location {
     private final int locationID;

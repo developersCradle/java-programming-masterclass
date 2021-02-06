@@ -1,4 +1,4 @@
-package tutorial_163_hashset_equals_and_hashcode;
+package tutorial_163_set_and_hashset;
 
 import java.util.HashSet;
 import java.util.Set;

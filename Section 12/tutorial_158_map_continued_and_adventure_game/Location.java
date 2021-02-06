@@ -1,9 +1,8 @@
-package tutorial_159_adding_exits_to_the_adventure_game;
+package tutorial_158_map_continued_and_adventure_game;
 
 
 import java.util.HashMap;
 import java.util.Map;
-
 
 public class Location {
     private final int locationID;
@@ -14,7 +13,6 @@ public class Location {
         this.locationID = locationID;
         this.description = description;
         this.exits = new HashMap<String, Integer>();
-        this.exits.put("Q", 0);
     }
 
     public void addExit(String direction, int location) {

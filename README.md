@@ -28,7 +28,7 @@ Insert certificate here when completed
 - [ ] [Section 13](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2013) - JavaFX
 - [ ] Section 14 - Basic Input & Output including java.util
 - [ ] [Section 15](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2015) - Concurrency in Java
-- [ ] Section 16 - Lambda Expressions
+- [ ] [Section 16](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2016) - Lambda Expressions
 - [ ] [Section 17](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2017) - Regular Expressions
 - [ ] Section 18 - Debugging and Unit Testing
 - [ ] Section 19 - Databases

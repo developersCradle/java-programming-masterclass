@@ -6,18 +6,18 @@ Lambda Expressions
 * Lambda expressions were introduced Java 8
 	* Easier way to deal with interfaces with one method
 		* With anonymous classes
-* ``` new Thread(new Runnable() { 			
-@Override 
-			public void run() {
+* ``` new Thread(new Runnable() {  			
+		@Override 
+		public void run() {
 				System.out.println("Printing from the Runnable!");	
 			}
-		}).start();``` 
+		}).start();
+	```
 			
 * anonymous  class to create runnable OR
 	* using class 
-		*``` 
-		new Thread(new CodeToRun()).start();
-		```
+		*`` new Thread(new CodeToRun()).start(); ``
+		
 * Using lambda expressions `new Thread( () -> System.out.println("Printing from the Runnable!")).start();`
 	* Lambda has three parts 
 		* Argument list `()` in this case empty argument list

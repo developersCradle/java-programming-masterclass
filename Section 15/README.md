@@ -28,6 +28,8 @@ Concurrency in Java
 	* Runnable is more convenient
 * I think Eclipse does not support ANSI color escape sequences
 	* Fix in eclipse [ANSI Escape in Console](https://marketplace.eclipse.org/content/ansi-escape-console)
+* `Thread myRunnableThread = new Thread(new MyRunnable()`
+	* Runnable is needed to pass to thread
 * With threads, they should be called as following `anotherThread.start();`
 	* Not invoking `anotherThread.run();`
 * Thread can be interrupted
@@ -41,3 +43,17 @@ Concurrency in Java
 * `anotherThread.join();` joining to another thread
 	* Join should be passed with timer, to prevent freezing if anotherThread is would not terminate 
 	* Wait timer amount or another thread to finish
+* Every thread has thread stack
+	* Thread 1 canno't access thread 2 stack
+	* Local variables are stored in thread stack
+* Thread can be suspended between steps+
+* <img src="thread_inteference.PNG" alt="alt text" width="100"/>
+	* Race condition, when two or more are sharing same resource
+* Synchronisation when thread can change or access the heap 
+* When method is Synchronised only one thread can access it at the time
+	* If method is being executed, other threads who want to run the method are
+	suspended
+	* `public synchronized void doCountdown() {` Only one can access doCountodwn at the time
+	* We only want synchronize only the code which we want to be synchronized
+		* To too keep code fast as possible 
+	* Jäin synchronisation 270

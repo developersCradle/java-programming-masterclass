@@ -12,6 +12,7 @@ public class Main {
     	anotherThread.start();
     	
     	new Thread() {
+    		@Override
     		public void run() {
     			System.out.println(ThreadColor.ANSI_GREEN + "Hello from anynomous class thread");
     		}

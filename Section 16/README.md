@@ -7,12 +7,14 @@ Lambda Expressions
 	* Easier way to deal with interfaces with one method
 		* With anonymous classes
 		 ``` 
+		 
 		 new Thread(new Runnable() {  			
 				@Override 
 				public void run() {
 						System.out.println("Printing from the Runnable!");	
 					}
 				}).start();
+				
 		```
 			
 * anonymous  class to create runnable OR
@@ -45,8 +47,10 @@ Lambda Expressions
 	* We can consider using lambda
 * Using lambda with sort
 	```
+	
 		   Collections.sort(employees, (employee1, employee2) ->
            employee1.getName().compareTo(employee2.getName()));
+           
 	```
 * Lambdas are easy to see, what code will be ran
 *`UpperConcat uc = (String s1, String s2) -> s1.toUpperCase() + s2.toUpperCase();`
@@ -82,8 +86,12 @@ Lambda Expressions
 * Function interface, we can pass string and expect string to return
 * One way to define Function
 	```
-	   Function<Employee, String> getFirstName = (Employee employee) -> {
+	
+	Function<Employee, String> getFirstName = (Employee employee) -> {
             return employee.getName().substring(0, employee.getName().indexOf(' '));
         };
+        
 	```
+	
 	* Functions are useful. We can use them in parts which varies and in callbacks
+	* We can chain Functions together with `andThen`

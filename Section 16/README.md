@@ -8,7 +8,6 @@ Lambda Expressions
 		* With anonymous classes
 		
 	``` 
-		 
 		 new Thread(new Runnable() {  			
 				@Override 
 				public void run() {
@@ -54,12 +53,12 @@ Lambda Expressions
 * Using lambda with sort
 
 	```
-	
 		   Collections.sort(employees, (employee1, employee2) ->
-           employee1.getName().compareTo(employee2.getName()));           
+         employee1.getName().compareTo(employee2.getName()));           
 	```
 * Lambdas are easy to see, what code will be ran
-*`UpperConcat uc = (String s1, String s2) -> s1.toUpperCase() + s2.toUpperCase();`
+
+* `UpperConcat uc = (String s1, String s2) -> s1.toUpperCase() + s2.toUpperCase();`
 	* When lambda body consist single statement which evaluates to single value, return statement is not needed
 		* If in other hands if lambda consists more than one statement -> return keyword is needed
 	* Here we are assigning lambda to variable and use it later
@@ -72,7 +71,8 @@ Lambda Expressions
 * We don't need to use lambda expressions, we could achieve same with anonymous classes
 	* To use them is up to person
 * [Functional Programming](https://en.wikipedia.org/wiki/Functional_programming)
-* [Consumer] (https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)
+
+* [Consumer](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)
 * Name Consumer come "object in, nothing out", therefore consumes
 * forEach is Consumer type runnable interface
 
@@ -109,8 +109,10 @@ Lambda Expressions
 			* We could chain as many function together as we would want
 		* To call composed function  we call `.apply` 
 * [java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
+
 <img src="Lambda-Expressions-Chaining-java.util.function-Functions-table.png" alt="alt text" width="700"/>
-	* No sense to chain consumers
+
+* No sense to chain consumers
 * Streams were introduced in Java 8
 * Stream is set of object references
 * Using streams have to meet 2 requirements
@@ -119,14 +121,13 @@ Lambda Expressions
 		* For example cannot depend on variable values on previous step
 		
 	
-	```
 	        someBingoNumbers
                 .stream()
                 .map(String::toUpperCase)
                 .filter(s->s.startsWith("G"))
                 .sorted()
                 .forEach(System.out::println);
-	```
+	
 	
 * `.stream()` stream of items in same order as were in original file        
 * `map(String::toUpperCase)` method reference

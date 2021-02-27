@@ -6,7 +6,8 @@ Lambda Expressions
 * Lambda expressions were introduced Java 8
 	* Easier way to deal with interfaces with one method
 		* With anonymous classes
-``` 
+		
+	``` 
 		 
 		 new Thread(new Runnable() {  			
 				@Override 
@@ -30,6 +31,7 @@ Lambda Expressions
 * Compiler sees lambda expression ->  One of thread constructor accepts runnable parameter and it knows runnable interface has one method, which does not take any parameters -> Its able match lambda expressions argument list "no parameter" to run method 
 	* Lambda needs to match to method -> lambda expressions can be used only with interfaces which contains only one method, which has to be implemented -> These interfaces are called functional interfaces
 * Multiple line lambda, we are using {} if more than one statement
+
 	```		
 			new Thread( () -> {
 			System.out.println("Printing from the Runnable!");
@@ -37,6 +39,7 @@ Lambda Expressions
 			System.out.println("This is line 3");
 			}).start();
 	```
+	
 * We can use Lambda with Comparator
 	* Comparator has two abstract methods to implement
 		* We just need to implement `compare(T o1, T o2)`
@@ -49,11 +52,12 @@ Lambda Expressions
 * If we see anonymous class definition that only override one method
 	* We can consider using lambda
 * Using lambda with sort
+
 	```
 	
 		   Collections.sort(employees, (employee1, employee2) ->
            employee1.getName().compareTo(employee2.getName()));           
-           
+	```
 * Lambdas are easy to see, what code will be ran
 *`UpperConcat uc = (String s1, String s2) -> s1.toUpperCase() + s2.toUpperCase();`
 	* When lambda body consist single statement which evaluates to single value, return statement is not needed
@@ -71,6 +75,7 @@ Lambda Expressions
 * [Consumer] (https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)
 * Name Consumer come "object in, nothing out", therefore consumes
 * forEach is Consumer type runnable interface
+
 	```
 	
         employees.forEach(employee -> {
@@ -87,6 +92,7 @@ Lambda Expressions
 * Predicates return only true or false
 * Function interface, we can pass string and expect string to return
 * One way to define Function
+
 	```
 		
 	Function<Employee, String> getFirstName = (Employee employee) -> {
@@ -113,13 +119,15 @@ Lambda Expressions
 		* For example cannot depend on variable values on previous step
 		
 	
-	
+	```
 	        someBingoNumbers
                 .stream()
                 .map(String::toUpperCase)
                 .filter(s->s.startsWith("G"))
                 .sorted()
                 .forEach(System.out::println);
+	```
+	
 * `.stream()` stream of items in same order as were in original file        
 * `map(String::toUpperCase)` method reference
 	* This is same as `map(s -> s.toUpperCase())`
@@ -163,6 +171,7 @@ Lambda Expressions
 	                .flatMap(department -> department.getEmployees().stream())
 	                .forEach(System.out::println);
 	```
+	
 * `.flatMap` wants function which returns stream
 	* Its called flat map since its often flatten nested list
 	* We want to use flatMap when we want to operate on list, but list isen't the source. In this case object containing list
@@ -182,13 +191,16 @@ Lambda Expressions
 	
 * Stream operations are lazy evaluated 
 	* We need terminal operation in the end to something to happen
-```
+	
+	```
 
 	Stream.of("ABC", "AC", "BAA", "CCCC", "XY", "ST")
                 .filter(s -> {
                     System.out.println(s);
                     return s.length() == 3;
-                });     
+                });
+	```    
+	 
 * Would not do any since there is no terminal operation
 
 * Stay consistent with code style when using lambda

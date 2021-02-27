@@ -49,6 +49,19 @@ public class Main {
         Function chainedFunction = upperCase.andThen(firstName);
         System.out.println(chainedFunction.apply(employees.get(0)));
 
+        Function<String, String> eka = kolmas -> {
+        	System.out.println("Eka");
+        	return "test";
+        };
+        Function<String, String> toka = name -> {
+        	System.out.println("Toka");
+        	return "test";
+        };
+        Function chainattu = eka.andThen(toka);
+        System.out.println(chainattu.apply("kolmas"));
+
+        
+        
         BiFunction<String, Employee, String> concatAge = (String name, Employee employee) -> {
             return name.concat(" " + employee.getAge());
         };

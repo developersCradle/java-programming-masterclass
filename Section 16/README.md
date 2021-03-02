@@ -73,6 +73,7 @@ Lambda Expressions
 * [Functional Programming](https://en.wikipedia.org/wiki/Functional_programming)
 
 * [Consumer](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)
+<img src="forEachConsumer.PNG" alt="alt text" width="700"/>
 * Name Consumer come "object in, nothing out", therefore consumes
 * forEach is Consumer type runnable interface
 

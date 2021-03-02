@@ -103,7 +103,7 @@ public class Main {
 	        .stream()
 	        .map( (String name) -> name.substring(0, 1).toUpperCase() + name.substring(1))
 	        .peek(peek -> System.out.println(peek))
-	        .sum();
+	        .count();
 	        
 	}
 	

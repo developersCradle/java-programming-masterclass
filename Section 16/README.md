@@ -76,16 +76,15 @@ Lambda Expressions
 <img src="forEachConsumer.PNG" alt="alt text" width="700"/>
 * Name Consumer come "object in, nothing out", therefore consumes
 * forEach is Consumer type runnable interface
-
-	```
 	
         employees.forEach(employee -> {
             System.out.println(employee.getName());
             System.out.println(employee.getAge());
         });
         
-	```
-* We can call method which lambda maps to, in case of `Predicate` it is `test`
+        
+* We can call method which lambda maps to, in case of
+ `Predicate` it is `test`
 	* Example of testing `ageCondition.test(employee)`
 * We can chain predicates`System.out.println(greaterThan15.and(lessThan100).test(50));`
 * Consumer does not return value

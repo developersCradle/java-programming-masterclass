@@ -1,4 +1,4 @@
-package tutorial_164_hashset_equals_and_hashcode;
+package tutorial_167_sets_symmetric_and_asymmetric;
 
 
 import java.util.HashMap;

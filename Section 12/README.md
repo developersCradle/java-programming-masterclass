@@ -55,4 +55,26 @@ Section 12: Java Collections
 	* references are stored in sets
 		* not objects itself
 		* reference to String is same as reference to any other object
+	* Set accepts objects when .equals is not matching 
+* referential equality if both point to same object, they are equal
+* Objects .equal
+	* String class has overridden .equals from object
+<img src="objectEquals.PNG" alt="alt text" width="300"/>
 * Java 7 uses compressed pointers [Performance](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/performance-enhancements-7.html)
+* HashSet or HashMap is using hashcode in which bucket object is going to
+<img src="bucket.PNG" alt="alt text" width="300"/>
+* [Object](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) 
+* .equals method should implement
+	* symmetric, both should return true
+
+	```
+	
+	 System.out.println(rover2.equals(rover));
+    System.out.println(rover.equals(rover2));
+    
+   ```
+*`(Arrays.asList(arrayWords)` serves bridge between array-based and collection-base APIS
+* Bulk operations can be found [Set Inferface](https://docs.oracle.com/javase/tutorial/collections/interfaces/set.html)
+* toString is indented for debugging
+* `Collections.unmodifiableMap(list);` returns read only map
+

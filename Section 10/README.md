@@ -18,9 +18,8 @@ Section 10: Java Generics
 	* `T extends Player`
 		* Upper bound of T
 		* Is extended of Player or accepts Player itself
-
 			* Java allow multiple bounds
-				*`public class Team<T extends Player & Coach & Manager> {`
+				* `public class Team<T extends Player & Coach & Manager> {`
 					* Syntax for multiple upper bounds
 * Argument passed to type parameter can be class or interface
 *`public class Team<T extends Player> implements Comparable<Team<T>> `

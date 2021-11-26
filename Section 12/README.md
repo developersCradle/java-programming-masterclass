@@ -1,4 +1,4 @@
-#Section 12: Java Collections
+# Section 12: Java Collections
 
 Section 12: Java Collections
 
@@ -11,17 +11,17 @@ Section 12: Java Collections
 	* LinkedList
 * Collection provides binary search
 	* Object must implement Comparable
-* ` List<Theatre.Seat> seatCopy = new ArrayList<>(theatre.seats);` Shallow copy
+* `List<Theatre.Seat> seatCopy = new ArrayList<>(theatre.seats);` Shallow copy
 	* Copying data to another object, but they are same object, reference to same object
 * Deep copy is when data is fully copied, not just references
-* `Collections.reverse(seatCopy);` Reverse
+Reverse
+* `Collections.reverse(seatCopy);` 
 * `Collections.shuffle(seatCopy);` Shuffle
 * `Collections.min(seatCopy);` Puts min based on provided natural order
 * `Collections.max(seatCopy);` Puts max based on provided natural order
 * `Collections.swap(list, i, j);` swaps two elements
 * We can create comparator to existing class or extend comparator in class
-	* 
-	`
+	* `
 	static {
         PRICE_ORDER = new Comparator<Seat>() {
         ...
@@ -43,7 +43,7 @@ Section 12: Java Collections
 * Making class immutable means after you create it, you cannot change it
 * Getters and setters should be provided if class needs them
 * If class field is setter final, it should be initialized in constructor
-* [Immutable Objects]  (https://docs.oracle.com/javase/tutorial/essential/concurrency/imstrat.html)
+* [Immutable Objects] (https://docs.oracle.com/javase/tutorial/essential/concurrency/imstrat.html)
 * Set does not have ordering
 	* Canno't contain duplicates 
 	* Canno't retrieve item from set 
@@ -59,11 +59,11 @@ Section 12: Java Collections
 * referential equality if both point to same object, they are equal
 * Objects .equal
 	* String class has overridden .equals from object
-<img src="objectEquals.PNG" alt="alt text" width="300"/>
-* Java 7 uses compressed pointers [Performance](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/performance-enhancements-7.html)
+* <img src="objectEquals.PNG" alt="alt text" width="300"/>
+* Java 7 uses compressed pointers [Performance] (https://docs.oracle.com/javase/8/docs/technotes/guides/vm/performance-enhancements-7.html)
 * HashSet or HashMap is using hashcode in which bucket object is going to
-<img src="bucket.PNG" alt="alt text" width="300"/>
-* [Object](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) 
+* <img src="bucket.PNG" alt="alt text" width="300"/>
+* [Object] (https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) 
 * .equals method should implement
 	* symmetric, both should return true
 

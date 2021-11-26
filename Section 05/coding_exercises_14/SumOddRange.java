@@ -14,4 +14,21 @@ package coding_exercises_14;
  */
 public class SumOddRange {
 
+	public private isOdd(int number) {
+
+		if (number < 0) {
+			return false;
+		}
+
+		if (number % 2 != 0) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+
+	public boolean sumOdd(int start, int end) {
+
+	}
 }

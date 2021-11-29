@@ -8,3 +8,4 @@ loops and control flow statements etc...
 * Multiple switch statements can be linked as following: `case 'C': case 'D' : case 'E':`
 * [FirstPrimes](https://primes.utm.edu/lists/small/1000.txt) 
 * Skipped rest do when have free time 
+* `numberAsString += 1;` java will automatically convert "1" as string and concatenate it to the string

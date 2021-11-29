@@ -9,3 +9,5 @@ loops and control flow statements etc...
 * [FirstPrimes](https://primes.utm.edu/lists/small/1000.txt) 
 * Skipped rest do when have free time 
 * `numberAsString += 1;` java will automatically convert "1" as string and concatenate it to the string
+* `Scanner` Java's build in classes, can read user input
+* Its recommended close Scanner once its been used `scanner.close()`

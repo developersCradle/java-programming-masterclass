@@ -3,7 +3,7 @@ package tutorial_63_switch_statement;
 
 public class Main {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 //        int value = 3;
 //        if(value == 1) {
 //            System.out.println("Value was 1");
@@ -56,7 +56,7 @@ public class Main {
             default:
                 System.out.println("Could not find A, B, C, D or E");
                 break;
-        }
+		}
 
         String month = "JuNE";
         switch(month.toUpperCase()) {
@@ -68,8 +68,7 @@ public class Main {
                 break;
             default:
                 System.out.println("Not sure");
-        }
-
+	}
 
 
 

@@ -11,3 +11,4 @@ loops and control flow statements etc...
 * `numberAsString += 1;` java will automatically convert "1" as string and concatenate it to the string
 * `Scanner` Java's build in classes, can read user input
 * Its recommended close Scanner once its been used `scanner.close()`
+* `What is a Palindrome number?`  A palindrome number is a number which when reversed is equal to the original number. For example: 121, 12321, 1001 etc.

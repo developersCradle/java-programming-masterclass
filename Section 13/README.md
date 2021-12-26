@@ -43,3 +43,16 @@ Section 13: JavaFX
 	* Any part of program is interested handling that event?  -> Event handler
 * `onAction="#onButtonClicked"/>` associate event handler
 * JavaFX annotation used to associate component with code `@FXML`
+* Some event handlers can take parameter
+* `e.getSource()` which control was pressed
+	* no need to write event handler for every compoment
+* [CheckBox] https://docs.oracle.com/javafx/2/api/javafx/scene/control/CheckBox.html
+* `Runnable task = new Runnable()` 
+	* The Runnable interface should be implemented by anyclass whose instances are intended to be executed by a thread.
+	
+* [Concurrency in JavaFX](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/concurrency.htm)
+* `<ListView fx:id="todoListView" onMouseClicked="#handleClickListView">`
+	* fx:id="todoListView"  gives id for element
+	* onMouseClicked="#handleClickListView" click handler
+* [DateTimeFormatter] https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+	

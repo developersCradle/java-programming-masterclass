@@ -55,4 +55,10 @@ Section 13: JavaFX
 	* fx:id="todoListView"  gives id for element
 	* onMouseClicked="#handleClickListView" click handler
 * [DateTimeFormatter] https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
-	
+* Singleton has one static method
+	* Singleton data generator
+* `\t` delimiter character -> Tab
+* Saving large amount of data in textfile is impractical
+* [String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+* [Package java.nio](https://docs.oracle.com/javase/7/docs/api/java/nio/package-summary.html)
+* [DialogPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/DialogPane.html)

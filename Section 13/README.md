@@ -54,7 +54,7 @@ Section 13: JavaFX
 * `<ListView fx:id="todoListView" onMouseClicked="#handleClickListView">`
 	* fx:id="todoListView"  gives id for element
 	* onMouseClicked="#handleClickListView" click handler
-* [DateTimeFormatter] https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+* [DateTimeFormatter] (https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 * Singleton has one static method
 	* Singleton data generator
 * `\t` delimiter character -> Tab
@@ -62,3 +62,13 @@ Section 13: JavaFX
 * [String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
 * [Package java.nio](https://docs.oracle.com/javase/7/docs/api/java/nio/package-summary.html)
 * [DialogPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/DialogPane.html)
+* Data Binding binds control to data. Control knows when data is being updated
+	* `todoListView.setItems(TodoData.getInstance().getTodoItems());`
+	* Binding todoListView to observable items
+* [FXCollections](https://docs.oracle.com/javase/8/javafx/api/javafx/collections/FXCollections.html)
+* [DummyTextGenerator!](https://www.blindtextgenerator.com/lorem-ipsum)
+* Each item in list view is displayed in cell, cell factory customizes how cells look
+	* Custom cell factory
+* <img src="BorderPane.PNG" alt="alt text" width="300"/>
+* `Callback is defined with two generic parameters: the first parameterspecifies the type of the object passed in to the call method,with the second parameter specifying the return type of the method.`
+* ContextMenus items are different depending on context

@@ -69,6 +69,14 @@ Section 13: JavaFX
 * [DummyTextGenerator!](https://www.blindtextgenerator.com/lorem-ipsum)
 * Each item in list view is displayed in cell, cell factory customizes how cells look
 	* Custom cell factory
-* <img src="BorderPane.PNG" alt="alt text" width="300"/>
+* <img src="cellfactoryOveride.PNG.PNG" alt="alt text" width="300"/>
 * `Callback is defined with two generic parameters: the first parameterspecifies the type of the object passed in to the call method,with the second parameter specifying the return type of the method.`
 * ContextMenus items are different depending on context
+* Sorted list -> arrayList -> wrapping into sorted list keeps array list sorted
+* [JavaFX CSS Reference Guide](https://docs.oracle.com/javase/8/javafx/api/javafx/collections/FXCollections.html)
+ https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
+* [Bloom](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/effect/Bloom.html)
+* Passing parent to FileChooser showOpenDialog prevents actions on actions on parent
+ 
+  
+ 

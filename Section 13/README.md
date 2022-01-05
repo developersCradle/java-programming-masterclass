@@ -77,6 +77,9 @@ Section 13: JavaFX
  https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
 * [Bloom](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/effect/Bloom.html)
 * Passing parent to FileChooser showOpenDialog prevents actions on actions on parent
- 
-  
+* [WebEngine](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/web/WebEngine.html)
+* JavaFx SceneBuilder is GUI builder, drag and drop manner
+	* <b>Write CODE first then use GUI builder</b>
+* Scene builder from Oracle, we dont wana this anymore x( -> open source 
+*  [SceneBuilder](https://gluonhq.com/products/scene-builder/) 
  

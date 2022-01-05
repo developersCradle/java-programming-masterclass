@@ -25,7 +25,7 @@ Insert certificate here when completed
 - [x] [Section 10](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2010) - Java Generics
 - [x] [Section 11](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2011) - Naming Conventions and Packages. static and final keywords
 - [ ] [Section 12](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2012) - Java Collections
-- [ ] [Section 13](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2013) - JavaFX
+- [x] [Section 13](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2013) - JavaFX
 - [ ] Section 14 - Basic Input & Output including java.util
 - [ ] [Section 15](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2015) - Concurrency in Java
 - [x] [Section 16](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2016) - Lambda Expressions

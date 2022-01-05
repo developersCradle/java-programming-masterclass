@@ -15,24 +15,18 @@ Section 13: JavaFX
 	* Scene is scene inside stage. 
 * `layout` defines positioning and resizing behaviour
 	* Every control computes their preferred size based on its content
-* [AnchorPane] (https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/AnchorPane.html)
-* [GridPane] (https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html)
-* [VBox]
-(https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/VBox.html)
-* [GridPane]
-(https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/HBox.html)
+* [AnchorPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/AnchorPane.html)
+* [GridPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html)
+* [VBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/VBox.html)
+* [GridPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/HBox.html)
 * `columnSpan` how many column this takes space 
 * BorderPane one of most used layout
 * <img src="BorderPane.PNG" alt="alt text" width="300"/>
-* [FlowPane] (https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html)
-* [StackPane]
-(https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/StackPane.html)
-* [TilePane]
-(https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/TilePane.html)
-* [Graphics Repository]
-(https://www.oracle.com/java/technologies/java-look-and-feel-graphics-repository.html)
-* [Button]
-(https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html)
+* [FlowPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html)
+* [StackPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/StackPane.html)
+* [TilePane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/TilePane.html)
+* [Graphics Repository](https://www.oracle.com/java/technologies/java-look-and-feel-graphics-repository.html)
+* [Button](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html)
 * Button interfaces provides default implementations how button show work
 	* example interface skinnable can be overridden to make our own behaviour for this interface
 * Wrapping text inside element not cutting off
@@ -46,7 +40,7 @@ Section 13: JavaFX
 * Some event handlers can take parameter
 * `e.getSource()` which control was pressed
 	* no need to write event handler for every compoment
-* [CheckBox] https://docs.oracle.com/javafx/2/api/javafx/scene/control/CheckBox.html
+* [CheckBox](https://docs.oracle.com/javafx/2/api/javafx/scene/control/CheckBox.html
 * `Runnable task = new Runnable()` 
 	* The Runnable interface should be implemented by anyclass whose instances are intended to be executed by a thread.
 	
@@ -54,7 +48,7 @@ Section 13: JavaFX
 * `<ListView fx:id="todoListView" onMouseClicked="#handleClickListView">`
 	* fx:id="todoListView"  gives id for element
 	* onMouseClicked="#handleClickListView" click handler
-* [DateTimeFormatter] (https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+* [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 * Singleton has one static method
 	* Singleton data generator
 * `\t` delimiter character -> Tab
@@ -82,4 +76,5 @@ Section 13: JavaFX
 	* <b>Write CODE first then use GUI builder</b>
 * Scene builder from Oracle, we dont wana this anymore x( -> open source 
 *  [SceneBuilder](https://gluonhq.com/products/scene-builder/) 
+* `SimpleStringProperty notes = new SimpleStringProperty("");` Better support with data binding, not just String
  

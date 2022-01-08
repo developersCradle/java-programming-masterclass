@@ -15,6 +15,7 @@ Section 13: JavaFX
 	* Scene is scene inside stage. 
 * `layout` defines positioning and resizing behaviour
 	* Every control computes their preferred size based on its content
+* <img src="scenegraph.PNG" alt="alt text" width="300"/>
 * [AnchorPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/AnchorPane.html)
 * [GridPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html)
 * [VBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/VBox.html)
@@ -40,7 +41,7 @@ Section 13: JavaFX
 * Some event handlers can take parameter
 * `e.getSource()` which control was pressed
 	* no need to write event handler for every compoment
-* [CheckBox](https://docs.oracle.com/javafx/2/api/javafx/scene/control/CheckBox.html
+* [CheckBox](https://docs.oracle.com/javafx/2/api/javafx/scene/control/CheckBox.html)
 * `Runnable task = new Runnable()` 
 	* The Runnable interface should be implemented by anyclass whose instances are intended to be executed by a thread.
 	
@@ -77,4 +78,10 @@ Section 13: JavaFX
 * Scene builder from Oracle, we dont wana this anymore x( -> open source 
 *  [SceneBuilder](https://gluonhq.com/products/scene-builder/) 
 * `SimpleStringProperty notes = new SimpleStringProperty("");` Better support with data binding, not just String
+
+### Helpfull links
+
+* [Property](https://www.youtube.com/watch?v=BY-4ONH0DFE)
+* [Binding](https://www.youtube.com/watch?v=s8GomyEOA8w)
+
  

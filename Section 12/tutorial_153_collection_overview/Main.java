@@ -1,6 +1,6 @@
 package tutorial_153_collection_overview;
 
-
+import tutorial_226_exceptions.Theatre;
 
 public class Main {
 

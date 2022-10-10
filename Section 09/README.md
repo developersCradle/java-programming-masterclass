@@ -7,9 +7,9 @@ Inner and Abstract Classes & Interfaces
 * ITelephone
 	* I is telling its interface
 * Java library is using a lot interfaces
-*`Vector<~>` is one kind of list
+* `Vector<~>` is one kind of list
 * Implement interface or inherit from base class
-	* relations between object decides
+	* Relations between object decides
 * `List<String> values = new ArrayList<String>()`
 	* Preferred way writing List
 		* Maximum flexibility since List is more generic version of the list
@@ -21,7 +21,7 @@ Inner and Abstract Classes & Interfaces
 	* Non Static nested class, "Inner class"
 		* These types are usefully
 		* Should be coupled with outer class
-			*`GearBox` has inner class `Gear`
+			* `GearBox` has inner class `Gear`
 				* Inner class has meaning to be inner class
 		* `.this` inside inner class refers to inner class not the outer class
 		* `Gearbox.Gear first = mcLaren.new Gear(1,23.3);` creating inner class
@@ -53,6 +53,5 @@ Inner and Abstract Classes & Interfaces
 * `currentItem.setNext(newItem).setPrevious(currentItem)`
 	* We can short circuit lines like such
 * Tree traverse
-	<img src="treeList.PNG" alt="alt text" width="200"/>
-
+<img src="treeList.PNG" alt="alt text" width="300"/>
 	 

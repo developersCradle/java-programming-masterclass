@@ -9,21 +9,23 @@ Concurrency in Java
 	* HEAP is not shared between processes
 * THREAD is unit of execution within a process
 	* each process can have multiple threads
-* every thread created by a process shares the process's memory and files
-* thread stack is personal to thread, this is created when new thread is introduced
+* Every thread created by a process shares the process's memory and files
+* Thread stack is personal to thread, this is created when new thread is introduced
 * Why threads
 	* Performing task while waiting
 	* Some API require us to provide one
-*`anotherThread.start();` tells JVM to start running run() method
+* `anotherThread.start();` tells JVM to start running run() method
 * Need to create instance of thread and then start the thread
 * Using subclass of Thread
 	* We can only start() subclass once
 * Creating thread with anonymous class
-`   	new Thread() {
+```
+   	new Thread() {
     		public void run() {
     			System.out.println("Hello from anonymous class thread");
     		}
-    	}.start();`
+    	}.start();
+```
 * Two ways creating threads Runnable interface or subclassing
 	* Runnable is more convenient
 * I think Eclipse does not support ANSI color escape sequences
@@ -46,8 +48,8 @@ Concurrency in Java
 * Every thread has thread stack
 	* Thread 1 canno't access thread 2 stack
 	* Local variables are stored in thread stack
-* Thread can be suspended between steps+
-* <img src="thread_inteference.PNG" alt="alt text" width="100"/>
+* Thread can be suspended between steps
+<img src="thread_inteference.PNG" alt="alt text" width="150"/>
 	* Race condition, when two or more are sharing same resource
 * Synchronisation when thread can change or access the heap 
 * When method is Synchronised only one thread can access it at the time
@@ -56,4 +58,4 @@ Concurrency in Java
 	* `public synchronized void doCountdown() {` Only one can access doCountodwn at the time
 	* We only want synchronize only the code which we want to be synchronized
 		* To too keep code fast as possible 
-	* Jäin synchronisation 270
+	* Jï¿½in synchronisation 270

@@ -15,14 +15,11 @@ Lambda Expressions
 					}
 				}).start();
 	```
-
-
-
 			
 * anonymous  class to create runnable OR
-	* using class -> `` new Thread(new CodeToRun()).start(); ``
-		
-* Using lambda expressions `new Thread( () -> System.out.println("Printing from the Runnable!")).start();`
+	* using class -> `` new Thread(new CodeToRun()).start(); ``		
+* Using lambda expressions 
+`new Thread( () -> System.out.println("Printing from the Runnable!")).start();`
 	* Lambda has three parts 
 		* Argument list `()` in this case empty argument list
 		* Arrow token `->`
@@ -73,7 +70,7 @@ Lambda Expressions
 * [Functional Programming](https://en.wikipedia.org/wiki/Functional_programming)
 
 * [Consumer](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html)
-<img src="forEachConsumer.PNG" alt="alt text" width="700"/>
+<img src="forEachConsumer.PNG" alt="alt text" width="500"/>
 * Name Consumer come "object in, nothing out", therefore consumes
 * forEach is Consumer type runnable interface
 	
@@ -110,7 +107,7 @@ Lambda Expressions
 		* To call composed function  we call `.apply` 
 * [java.util.function](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
 
-<img src="Lambda-Expressions-Chaining-java.util.function-Functions-table.png" alt="alt text" width="700"/>
+<img src="Lambda-Expressions-Chaining-java.util.function-Functions-table.png" alt="alt text" width="600"/>
 
 * No sense to chain consumers
 * Streams were introduced in Java 8
@@ -135,7 +132,7 @@ Lambda Expressions
 * [method references](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
 * [stream](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html)
 
-<img src="method_references.PNG" alt="alt text" width="500"/>
+<img src="method_references.PNG" alt="alt text" width="600"/>
 
 * `.map(String::toUpperCase)` .map returns stream
 	* Maps each item in input stream to result return from function argument

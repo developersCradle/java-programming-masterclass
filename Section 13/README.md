@@ -15,14 +15,14 @@ Section 13: JavaFX
 	* Scene is scene inside stage. 
 * `layout` defines positioning and resizing behaviour
 	* Every control computes their preferred size based on its content
-* <img src="scenegraph.PNG" alt="alt text" width="300"/>
+<img src="scenegraph.PNG" alt="alt text" width="300"/>
 * [AnchorPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/AnchorPane.html)
 * [GridPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/GridPane.html)
 * [VBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/VBox.html)
 * [GridPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/HBox.html)
 * `columnSpan` how many column this takes space 
 * BorderPane one of most used layout
-* <img src="BorderPane.PNG" alt="alt text" width="300"/>
+<img src="BorderPane.PNG" alt="alt text" width="300"/>
 * [FlowPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html)
 * [StackPane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/StackPane.html)
 * [TilePane](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/TilePane.html)
@@ -31,7 +31,7 @@ Section 13: JavaFX
 * Button interfaces provides default implementations how button show work
 	* example interface skinnable can be overridden to make our own behaviour for this interface
 * Wrapping text inside element not cutting off
-* <img src="wrappingText.PNG" alt="alt text" width="300"/>
+<img src="wrappingText.PNG" alt="alt text" width="300"/>
 * Procedural programming  console programs, where start and end
 * Event-driven programming where UI responses to events
 * Button is pressed Event is raised in UI thread
@@ -47,7 +47,7 @@ Section 13: JavaFX
 	
 * [Concurrency in JavaFX](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/concurrency.htm)
 * `<ListView fx:id="todoListView" onMouseClicked="#handleClickListView">`
-	* fx:id="todoListView"  gives id for element
+	* `fx:id="todoListView"`  gives id for element
 	* onMouseClicked="#handleClickListView" click handler
 * [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 * Singleton has one static method
@@ -64,12 +64,14 @@ Section 13: JavaFX
 * [DummyTextGenerator!](https://www.blindtextgenerator.com/lorem-ipsum)
 * Each item in list view is displayed in cell, cell factory customizes how cells look
 	* Custom cell factory
-* <img src="cellfactoryOveride.PNG.PNG" alt="alt text" width="300"/>
-* `Callback is defined with two generic parameters: the first parameterspecifies the type of the object passed in to the call method,with the second parameter specifying the return type of the method.`
+<img src="cellfactoryOveride.PNG" alt="alt text" width="700"/>
+
+>Callback is defined with two generic parameters: the first parameterspecifies the type of the object passed in to the call method,with the second parameter specifying the return type of the method.
+
 * ContextMenus items are different depending on context
 * Sorted list -> arrayList -> wrapping into sorted list keeps array list sorted
-* [JavaFX CSS Reference Guide](https://docs.oracle.com/javase/8/javafx/api/javafx/collections/FXCollections.html)
- https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
+* [FXCollections](https://docs.oracle.com/javase/8/javafx/api/javafx/collections/FXCollections.html)
+ * [JavaFX CSS Reference Guide](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html)
 * [Bloom](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/effect/Bloom.html)
 * Passing parent to FileChooser showOpenDialog prevents actions on actions on parent
 * [WebEngine](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/web/WebEngine.html)

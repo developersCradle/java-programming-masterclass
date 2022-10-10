@@ -26,11 +26,11 @@ Arrays, Java inbuilt Lists, Autoboxing and Unboxing
 * LinkedList Allocates 4 bytes for each integer
 	* With double this would be 8 bytes
 	* With Strings 8 bytes, but this time its pointer to another place
-	<img src="linkedList2.PNG" alt="alt text" width="200"/>
+	<img src="linkedList2.PNG" alt="alt text" width="400"/>
 * ArrayList is slow when adding element into middle
 	* This can be solved by linkedList
 		* Every element has link to another	
-		 <img src="linkedList.PNG" alt="alt text" width="200"/>
+		<img src="linkedList.PNG" alt="alt text" width="250"/>
 * ListIterator has more flexibility than normal iterator
 	* Following next and previous is provided in this flexible iterator
 	* REMEMBER Need to go next first to point to first record
@@ -45,4 +45,4 @@ Arrays, Java inbuilt Lists, Autoboxing and Unboxing
 * Exceptions should be processed in some manner
 	
 	
-TEE AUTO BOXING TUTORIALS
+TODO kun aikaa, TEE AUTO BOXING TUTORIALS

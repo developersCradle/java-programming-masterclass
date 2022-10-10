@@ -9,7 +9,7 @@ Section 10: Java Generics
 		* We are telling ArrayList what kind of object it can hold
 	* Enforcing type safety
 * Java 1.5 introducing generics
-* <> is called diamond
+* `<>` is called diamond
 * Earlier bug is detected cheaper it is to fix
 	* If we can found them at runtime, better
 * `public class Team<T extends Player> {`
@@ -22,6 +22,6 @@ Section 10: Java Generics
 				* `public class Team<T extends Player & Coach & Manager> {`
 					* Syntax for multiple upper bounds
 * Argument passed to type parameter can be class or interface
-*`public class Team<T extends Player> implements Comparable<Team<T>> `
+* `public class Team<T extends Player> implements Comparable<Team<T>> `
 	* Comparable, comparing teams to other teams
 	* We are providing T, coz we don't wana compare football and baseball teams togeter

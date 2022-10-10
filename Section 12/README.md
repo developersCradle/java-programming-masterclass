@@ -4,7 +4,9 @@ Section 12: Java Collections
 
 # What I Learned
 * Interfaces in Collection allows framework to be extended
-* <img src="hierarchy.PNG" alt="alt text" width="300"/>
+
+<img src="hierarchy.PNG" alt="alt text" width="300"/>
+
 * If declared as Collection, this can be implemented as any of type under collection
 * LIST:
 	* ArrayList
@@ -38,8 +40,10 @@ Reverse
 * ` public Map<String, Integer> getExits() {
         return new HashMap<String, Integer>(exits);
     } ` 
-    	* Nothing outside of this class, cannot change exits�
-* <img src="adventureGame.PNG" alt="alt text" width="300"/>
+	* Nothing outside of this class, cannot change exits�
+
+<img src="adventureGame.PNG" alt="alt text" width="300"/>
+
 * Making class immutable means after you create it, you cannot change it
 * Getters and setters should be provided if class needs them
 * If class field is setter final, it should be initialized in constructor
@@ -59,20 +63,21 @@ Reverse
 * referential equality if both point to same object, they are equal
 * Objects .equal
 	* String class has overridden .equals from object
+
 	<img src="objectEquals.PNG" alt="alt text" width="300"/>
+	
 * Java 7 uses **compressed pointers** [Performance](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/performance-enhancements-7.html)
 * HashSet or HashMap is using hashcode in which bucket object is going to
+
 <img src="bucket.PNG" alt="alt text" width="300"/>
+
 * Some information about [Object](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) 
 * .equals method should implement
 	* symmetric, both should return true
-
-	```
-	
-	 System.out.println(rover2.equals(rover));
-    System.out.println(rover.equals(rover2));
-    
-   ```
+```
+System.out.println(rover2.equals(rover));
+System.out.println(rover.equals(rover2));
+ ```
 * `(Arrays.asList(arrayWords)` serves bridge between array-based and collection-base APIS
 * Bulk operations can be found [Set Inferface](https://docs.oracle.com/javase/tutorial/collections/interfaces/set.html)
 * toString is indented for debugging

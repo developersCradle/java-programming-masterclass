@@ -49,8 +49,10 @@ Concurrency in Java
 	* Thread 1 canno't access thread 2 stack
 	* Local variables are stored in thread stack
 * Thread can be suspended between steps
+
 <img src="thread_inteference.PNG" alt="alt text" width="150"/>
-	* Race condition, when two or more are sharing same resource
+
+* Race condition, when two or more are sharing same resource
 * Synchronisation when thread can change or access the heap 
 * When method is Synchronised only one thread can access it at the time
 	* If method is being executed, other threads who want to run the method are

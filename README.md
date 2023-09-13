@@ -4,12 +4,19 @@
 
 All course material from Java Programming Masterclass for Software Developers by Tim Buchalka
 
-Every section contains my own notes
+Contains my own notes with some course material to enforce learning experience.
+
+If the content sparked :fire: your interest, please consider buying the course and start learning :book:
 
 [The Course at Udemy](https://www.udemy.com/java-the-complete-java-developer-course)   
 [The Learn Programming Academy](http://learnprogramming.academy)
 
 Insert certificate here when completed
+
+- Todo since course got updated curriculum also
+- Todo check typos and content more rich
+
+**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
 ## Progress/Curriculum
 

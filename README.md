@@ -2,7 +2,7 @@
 
 ![JAVA ENGINEER](pic.jpg)
 
-All course material from Java Programming Masterclass for Software Developers by Tim Buchalka
+All course material from Java Programming. Java 17 will be used. Masterclass for Software Developers by Tim Buchalka
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -15,6 +15,7 @@ Insert certificate here when completed
 
 - Todo since course got updated curriculum also
 - Todo check typos and content more rich
+- Todo korjaa tee sitämukaa kun otsikot käydään lävitse
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
@@ -44,3 +45,9 @@ Insert certificate here when completed
 - [ ] Section 22 - Migrating Java Projects to Java 9
 - [ ] Section 23 - Archived Videos
 - [ ] Section 24 - Bonus Material
+
+
+### Look sections again below is looked 
+
+
+- [ ] [Section 25](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2025) - Section 25: Databases **UUSI ja päivitetty** **TODO tee tästä myös luv2code JDBC AJURI OPAS**

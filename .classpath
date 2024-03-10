@@ -29,5 +29,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/heikki/Desktop/Git projektit/java-programming-masterclass/Section 24/tutorial_411_advanced_debugging/JTransforms-3.1-with-dependencies.jar" sourcepath="Section 24/tutorial_411_advanced_debugging/JTransforms-3.1-sources.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -70,6 +70,7 @@ Debugging and Unit Testing
 - Here we are experimenting about, 3rd party providing sources, so we can debug this. [JTransforms](https://github.com/wendykierp/JTransforms/tree/master?tab=readme-ov-file)
     
 <img src="addingExternalLibraryesWithSource.JPG" alt="alt text" width="600"/>
+
 1. Adding external Jar in Eclipse
 2. Adding Source into this Additional Jar
 
@@ -81,10 +82,45 @@ Debugging and Unit Testing
 ###  Introduction to Unit Testing with JUnit
 
 - One type of testing Unit testing
+    - When working with Java, Unit in this context refers to **method**.
 
 - End of application development cycle test suite is usually ran. If it will ran 100% everything is fine, if not some changes have broke the code! 
 
+<img src="bankAccountTest.JPG" alt="alt text" width="600"/>
 
+1. Test usually have *test postfix for indication what is being testing
+
+
+<img src="unitTestingThisIsBanned.JPG" alt="alt text" width="600"/>
+
+1. This is banned, there is **no logic to be tested** and still its green
+
+- There test failures, when unit test fails
+
+
+- We are making assertions that test are passed
+    - We need to be careful, we are only covering logic which we are testing against
+
+- Testing some example
+
+```
+	@Test
+	public void dummyTest() {
+	assertEquals(20, 21);
+	}
+
+```
+
+- We are testing double with **delta** parameter 3rd parameter
+    - It can give some leeway for testing doubles
+```
+	@Test
+	public void deposit() {
+		BankAccount account = new BankAccount("Tim", "Buchlka", 1000.0);
+		double balance = account.deposit(200.00, true);
+		assertEquals(1200.00, balance, 0);
+	}
+```
 
 
 

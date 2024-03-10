@@ -1,4 +1,4 @@
-package tutorial_412_introduction_to_unit_testing_with_junit;
+package tutorial_413_asserts_in_junit;
 
 public class Main {
 

@@ -51,6 +51,8 @@ Insert certificate here when completed
 
 ### Updated curriculum(transfer chapter under here and proceed this one)
 
+- [ ] [Section 24](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2024) - Debugging and Unit Testing **NEW and updated**
+
 - [ ] [Section 25](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2025) - Section 25: Databases **NEW and updated** 
 
 <!-- **TODO tee tästä myös luv2code JDBC AJURI OPAS** -->

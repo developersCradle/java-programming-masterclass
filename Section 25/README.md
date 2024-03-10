@@ -46,6 +46,7 @@ In Relational Database, Columns is often ment for name for **field**.
 1. **Flat file database** are stored in single table 
     - A Lot of duplication of data
     - [Flat File Database](https://en.wikipedia.org/wiki/Flat-file_database)
+
 <img src="flatTabledbExample.JPG" alt="alt text" width="500"/>
 
 1. Lot of duplication data. If wanted raise **Credit_Limit** for **ISP**
@@ -99,7 +100,7 @@ In Relational Database, Columns is often ment for name for **field**.
 
 - Here It's fine to insert such, but be **careful** when switching databases, this **phone number** could be inserted into **Integer field** or would **not work** at all! 
 
-- sqLite command ´to backout`.backup`
+- SQLite's command ´to backout`.backup`
     - `.backup testbackup`
 
 <img src="backupCommandInsqLite.JPG" alt="alt text" width="500"/>
@@ -107,4 +108,101 @@ In Relational Database, Columns is often ment for name for **field**.
 1. You can restore database using restore command `.backup testbackup`
 2. `UPDATE` affecting all the data. Be careful when using **UPDATE**
 
-- todo jäin 8:20
+- Tell tables in SQLite `.tables`
+- `.schema` Tell structure of tables in SQLite
+- `.dump` tells SQL creating table and inserting data
+- `.exit` exits cmd
+
+> **Mini Challenge**
+> Use the appropriate SQLite command to display the structure of the database
+
+- Answer: `.schema`
+
+> **Mini Challenge**
+> Find the title of album 367
+
+- Answer: `SELECT name FROM albums WHERE _id = 367;`
+
+- **Views** is common in most databases
+
+- **Key** in table is an **Index**. Which speeds ups **searches** and **joins** in columns
+    - Ordering of rows are **undefined**
+        - Similar **maps** in Java
+        - **Relation database** is heavily based on **set theory**
+
+- There can be many keys in table, but one primary key
+
+- [AutoIncrement In SQLite](https://www.sqlite.org/autoinc.html)
+
+> **Mini Challenge**
+> List all the songs that the songs from the same album appear together in track order.
+
+- Answer: SELECT * FROM songs ORDER BY album, track
+
+<img src="miniChallange.JPG" alt="alt text" width="500"/>
+
+- Jäin 5:25 ja tähän minichallange
+
+
+
+### Chapter 444. Transactions
+
+
+- We can use **prepared statements** on **insert**, **update** or **delete**
+
+
+<img src="trancactions.jpg" alt="alt text" width="500"/>
+
+- Better performance 
+- Better protection against SQL injection attacks
+
+### Making Transactions
+
+<img src="makingTransactionsSteps.jpg" alt="alt text" width="500"/>
+
+1. Put placeholders
+2. Make `PreparedStatement`
+3. Set **Placeholders** values
+4. We execute query using `executeQuery()` or `exectute()`
+5. We process results
+
+- JDBS Connection class **auto commits** changes by default when we call `execute()` on **insert**, **update**, **delete**: It's not always what we want to. For example
+
+<img src="exampleTransactionNeed.jpg" alt="alt text" width="500"/>
+
+- We would need to write extra code change back into original state. We need **Tranasactions**
+
+<img src="transactionUsageReason.jpg" alt="alt text" width="500"/>
+
+- In **transaction** world we will use name `commit` than `save`
+
+<img src="moreAboutTransctions.jpg" alt="alt text" width="500"/>
+
+## ACID-compliant 
+
+1. **A**tomicity
+2. **C**onsistency
+
+<img src="moreAboutTransctions2.jpg" alt="alt text" width="500"/>
+
+3. **I**solation
+4. **D**urability
+
+<img src="transActions.jpg" alt="alt text" width="500"/>
+
+- Use **Transactions** when we change data in database.
+
+<img src="stepsInSqlLiteTransaction.jpg" alt="alt text" width="500"/>
+
+- **SQLlite**
+
+1. `BEGIN TRANSACTION` Manually start transaction 
+2. `END TRANSACTION` Manually end transaction
+3. `COMMIT` Commit to changes 
+4. `ROLLBACK` Rolls back uncommitted changes. Work on uncommitted changes
+
+- If connection closes **before** **committing**, changes are rolled back.
+
+<img src="transActionStepsInSQLlite.jpg" alt="alt text" width="500"/>
+
+- Tee loppuun harjoituksen kanssa

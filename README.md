@@ -6,16 +6,18 @@ All course material from Java Programming. Java 17 will be used. Masterclass for
 
 Contains my own notes with some course material to enforce learning experience.
 
+This repository is made with Eclipse, therefore it will include configuration files which are related to this IDE
+
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:
 
 [The Course at Udemy](https://www.udemy.com/java-the-complete-java-developer-course)   
 [The Learn Programming Academy](http://learnprogramming.academy)
+[Home Page of Maker](https://www.timbuchalka.com/)
+
+- Todo check typos and content more rich(.md)
+- Todo fix headers when proceeding into to them(Do headings after every chapters)
 
 Insert certificate here when completed
-
-- Todo since course got updated curriculum also
-- Todo check typos and content more rich
-- Todo korjaa tee sitämukaa kun otsikot käydään lävitse
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
@@ -47,7 +49,8 @@ Insert certificate here when completed
 - [ ] Section 24 - Bonus Material
 
 
-### Look sections again below is looked 
+### Updated curriculum(transfer chapter under here and proceed this one)
 
+- [ ] [Section 25](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2025) - Section 25: Databases **NEW and updated** 
 
-- [ ] [Section 25](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2025) - Section 25: Databases **UUSI ja päivitetty** **TODO tee tästä myös luv2code JDBC AJURI OPAS**
+<!-- **TODO tee tästä myös luv2code JDBC AJURI OPAS** -->

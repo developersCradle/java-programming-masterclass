@@ -1,4 +1,4 @@
-package tutorial_413_asserts_in_junit;
+package tutorial_414_more_asserts_and_exception_handling;
 
 
 public class BankAccount {
@@ -31,6 +31,10 @@ public class BankAccount {
     // at a branch, with a teller.
     // It's false if the customer is performing the transaction at an ATM
     public double withdraw(double amount, boolean branch) {
+        if ((amount > 500.00) & !branch) {
+            throw new IllegalArgumentException();
+        }
+
         balance -= amount;
         return balance;
     }

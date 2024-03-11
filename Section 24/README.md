@@ -46,7 +46,7 @@ Debugging and Unit Testing
 1. **Rewind Frame** will travel previous frame. In this example it would jump to the **main** method.
 2. This frame would reminded
 
-- **Remember** Everything won't be reminded
+- **Remember** Everything won't be rewinded
     - Static/instances variables
     - Network traffic
     - Db Changes
@@ -86,12 +86,11 @@ Debugging and Unit Testing
 
 - End of application development cycle test suite is usually ran. If it will ran 100% everything is fine, if not some changes have broke the code! 
 
-<img src="bankAccountTest.JPG" alt="alt text" width="600"/>
+<img src="bankAccountTest.JPG" alt="alt text" width="400"/>
 
 1. Test usually have *test postfix for indication what is being testing
 
-
-<img src="unitTestingThisIsBanned.JPG" alt="alt text" width="600"/>
+<img src="unitTestingThisIsBanned.JPG" alt="alt text" width="500"/>
 
 1. This is banned, there is **no logic to be tested** and still its green
 
@@ -122,6 +121,289 @@ Debugging and Unit Testing
 	}
 ```
 
+- Best practice is to make one test per test case
 
+
+```
+    @Test
+	    public void isChecking_true() {
+	        BankAccount account = new BankAccount("Tim", "Buchalka", 1000.00, BankAccount.CHECKING);
+	        assertTrue("The account is NOT a checking account", account.isChecking());
+
+	    }
+```
+
+- When testing something being true, its advised to use **assertTrue** or **assertFalse**
+
+### More Asserts and Exception Handling
+
+<img src="assert.JPG" alt="alt text" width="600"/>
+
+<img src="assert2.JPG" alt="alt text" width="600"/>
+
+<img src="assert3.JPG" alt="alt text" width="600"/>
+
+- `@Before` is ran before our tests
+
+- Testing throwing exceptions, newer one!
+
+```
+   @Test(expected = IllegalArgumentException.class)
+    public void withdraw_notBranch() throws Exception {
+        double balance = account.withdraw(600.00, false);
+        assertEquals(400.00, balance, 0);
+    }
+```
+
+### Parameterized Testing
+
+- In the old days, this was the how you would test throwing exceptions
+```
+    @Test// (expected = IllegalArgumentException.class)
+    public void withdraw_notBranch() throws Exception {
+    	try {
+    		account.withdraw(600.00, false);
+    		fail("Should have thrown an IllegalArgumentException");
+		} catch (IllegalArgumentException e) {
+		}
+    	
+    }
+```
+
+- Newer JUnit 4 version
+
+```
+  @Test(expected = IllegalArgumentException.class)
+    public void withdraw_notBranch() throws Exception {
+    		account.withdraw(600.00, false);
+    		fail("Should have thrown an IllegalArgumentException");
+    	
+    }
+```
+
+- We can write many different class tests, but in the other we can write one **parameterized test**
+
+
+- If we are writing parameterized class file we need 
+
+```
+
+@RunWith(Parameterized.class)
+public class BankAccountTestParameterized {
+
+```
+
+- Making Parametrized test. Testing 1 method 
+
+
+```
+package tutorial_415_parameterized_testing;
+
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import static junit.framework.TestCase.assertEquals;
+
+
+
+@RunWith(Parameterized.class)
+public class BankAccountTestParameterized {
+
+    private BankAccount account;
+    private double amount;
+    private boolean branch;
+    private double expected;
+
+    public BankAccountTestParameterized(double amount, boolean branch, double expected) {
+        this.amount = amount;
+        this.branch = branch;
+        this.expected = expected;
+    }
+
+    @Before
+    public void setup() {
+        account = new BankAccount("Tim", "Buchalka", 1000.00, BankAccount.CHECKING);
+        System.out.println("Running a test...");
+    }
+
+    @Parameterized.Parameters
+    public static Collection<Object[]> testConditions() {
+        return Arrays.asList(new Object[][] {
+                {100.00, true, 1100.00},
+                {200.00, true, 1200.00},
+                {325.14, true, 1325.14},
+                {489.33, true, 1489.33},
+                {1000.00, true, 2000.00}
+        });
+    }
+
+    @Test
+    public void deposit() throws Exception {
+        account.deposit(amount, branch);
+        assertEquals(expected, account.getBalance(), .01);
+    }
+
+}
+
+```
+
+###  JUnit Challenge #1 and #2
+ 
+<img src="Challange1.JPG" alt="alt text" width="600"/>
+
+
+## My solution for Challenge 01
+
+- Test every method in **Utilities** class
+
+```
+package challange_416_junit_challenge_1_and_2;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class UtilitiesTest {
+
+	@Test
+	public void testEveryNthChar() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemovePairs() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testConverter() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testNullIfOddLength() {
+		fail("Not yet implemented");
+	}
+
+}
+
+```
+<img src="Challange2.JPG" alt="alt text" width="600"/>
+
+<img src="Challange22.JPG" alt="alt text" width="600"/>
+
+- One bug masking other bug is common in development process!
+    - Get use to it
+
+## My solution for Challenge 02
+
+```
+	@Test
+	public void testRemovePairs() {
+		
+		//Given - Start
+		Utilities util = new Utilities();		
+		//Given - End
+		
+		//When - Start
+		String result = util.removePairs("ABCBDEEF");
+		//When - End
+		
+		//Then - Start
+		assertEquals("ABCBDEF", result); //Pairs next to each other should be removed
+		//Then - End
+	}
+	
+public void testRemovePairsWithNotNextToEachOther() {
+		
+		//Given - Start
+		Utilities util = new Utilities();		
+		//Given - End
+		
+		//When - Start
+		String result = util.removePairs("ABBCDEEF");
+		//When - End
+		
+		//Then - Start
+		assertEquals("ABCDEF", result); //Pairs next to each other should be removed
+		//Then - End
+		
+	}
+```
+
+<img src="Challange3.JPG" alt="alt text" width="600"/>
+
+- When adding tests, you end up adding more functionality! 
+
+# JUnit Challenges #3 to #7
+
+## My solution for Challenge 03
+
+```
+@Test
+	public void testRemovePairsWithNull() {
+
+		// Given - Start
+		Utilities util = new Utilities();
+		// Given - End
+
+		// When - Start
+		String result = util.removePairs(null);
+		// When - End
+
+		// Then - Start
+		assertNull("Did not get null returned when argument passed was null", result); // Pairs next to each other should be removed
+		// Then - End
+
+	}
+
+	
+	
+	@Test
+	public void testRemovePairsWithLessThan2() {
+
+		// Given - Start
+		Utilities util = new Utilities();
+		// Given - End
+
+		// When - Start
+		String result = util.removePairs("A");
+		// When - End
+
+		// Then - Start
+		assertEquals("A", result); // Pairs next to each other should be removed
+		// Then - End
+
+	}
+
+	
+	@Test
+	public void testRemovePairsWithEmptyString() {
+
+		// Given - Start
+		Utilities util = new Utilities();
+		// Given - End
+
+		// When - Start
+		String result = util.removePairs("");
+		// When - End
+
+		// Then - Start
+		assertEquals("", result); // Pairs next to each other should be removed
+		// Then - End
+
+	}
+
+```
+
+<img src="Challange4.JPG" alt="alt text" width="600"/>
+
+## My solution for Challenge 04
 
 <!-- todo do always captions -->

@@ -2,13 +2,13 @@
 
 ![JAVA ENGINEER](pic.jpg)
 
-All course material from Java Programming. Java 17 will be used. Masterclass for Software Developers by Tim Buchalka
+All course material from Java Programming. Java 17 will be used. Masterclass for Software Developers by **Tim Buchalka**
 
 Contains my own notes with some course material to enforce learning experience.
 
-This repository is made with Eclipse, therefore it will include configuration files which are related to this IDE
+This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE. Also there is no builder, so this approach will be favored for now. ⚙️
 
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:
+If the content sparked :fire: your interest, please consider buying the course and start learning. :book:
 
 [The Course at Udemy](https://www.udemy.com/java-the-complete-java-developer-course)   
 [The Learn Programming Academy](http://learnprogramming.academy)
@@ -53,6 +53,6 @@ Insert certificate here when completed
 
 - [ ] [Section 24](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2024) - Debugging and Unit Testing **NEW and updated**
 
-- [ ] [Section 25](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2025) - Section 25: Databases **NEW and updated** 
+- [ ] [Section 25](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2025) - Databases **NEW and updated** 
 
 <!-- **TODO tee tästä myös luv2code JDBC AJURI OPAS** -->

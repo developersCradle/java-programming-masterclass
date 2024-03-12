@@ -406,4 +406,181 @@ public void testRemovePairsWithNotNextToEachOther() {
 
 ## My solution for Challenge 04
 
-<!-- todo do always captions -->
+```
+	@Test
+	public void testEveryNthChar() {
+		// Given - Start
+		Utilities utils = new Utilities();
+		// Given - Stop
+		
+		// When - Start
+		char[] output = utils.everyNthChar(new  char[] {'h', 'e', 'l', 'l', 'o'}, 2);
+		// When - Stop
+		
+		// Then - Start
+		assertArrayEquals(new char[] { 'e', 'l'}, output); //Joka toinen pitäisi olla
+		// Then - Stop
+	
+	
+	}
+
+```
+
+<img src="Challange5.JPG" alt="alt text" width="600"/>
+
+## My solution for Challenge 05
+
+```
+@Test
+	public void testEveryNthCharWhenLenghtMoreLenghtOfArray() {
+		// Given - Start
+		Utilities utils = new Utilities();
+		// Given - Stop
+		
+		// When - Start
+		char[] output2 = utils.everyNthChar(new  char[] {'h', 'e', 'l', 'l', 'o'}, 8);
+		// When - Stop
+		
+		// Then - Start
+		assertArrayEquals(new char[] {'h', 'e', 'l', 'l', 'o'}, output2); //Joka 8 pitäisi olla. Koko taulukko
+		// Then - Stop
+	}
+```
+
+<img src="Challange6.JPG" alt="alt text" width="600"/>
+
+## My solution for Challenge 06
+
+```
+@Test
+	public void testNullIfOddLength() {
+
+
+		// Given - Start
+		Utilities util = new Utilities();
+		// Given - End
+
+		// When - Start
+		String result = util.nullIfOddLength("evenLenght");
+		String resultNonEven = util.nullIfOddLength("nonEvenLenght");
+		// When - End
+
+		// Then - Start
+		assertNotNull("String was ovenlenght", result); //Original String is returned when its even
+		assertNull("String was odd lenght", resultNonEven);
+		// Then - End
+	
+	
+	}
+```
+
+<img src="Challange7.JPG" alt="alt text" width="600"/>
+
+## My solution for Challenge 07
+
+```
+@Test
+	public void testConverter() {
+		//Some crazy rules, like in some myu past comppanies
+		// Bussiness suka
+		
+		// Given - Start
+		Utilities util = new Utilities();
+		// Given - End
+
+		// When - Start
+		int result = util.converter(10,5);
+		// When - End
+
+		// Then - Start
+		assertEquals(300, result);
+		// Then - End
+	}
+```
+
+# Junit Challenges #8 to #10
+
+## My solution for Challenge 08
+
+<img src="Challange8.JPG" alt="alt text" width="600"/>
+
+```
+@Test(expected = ArithmeticException.class)
+	public void testConverterDivideBy0() throws Exception {
+		// Some crazy rules, like in some my past companies
+		// Business suka
+
+		// Given - Start
+		Utilities util = new Utilities();
+		// Given - End
+
+		// When - Start
+		int result = util.converter(10, 0);
+		// When - End
+
+		// Then - Start
+		assertEquals(300, result); // Does not matter, test in about exceptions. For being consistent
+		// Then - End
+	}
+```
+
+## My solution for Challenge 09
+
+<img src="Challange9.JPG" alt="alt text" width="600"/>
+
+- We just setup Given part with such
+
+```
+	@Before
+	public void setup() {
+		utils = new Utilities();
+	}
+
+```
+
+<img src="Challange10.JPG" alt="alt text" width="600"/>
+
+<img src="Challange10second.JPG" alt="alt text" width="600"/>
+
+## My solution for Challenge 10
+
+- Reminder about parameterized tests. For each set of data, Junit will create new instance of class passing expected and actual to class. 
+
+```
+
+@RunWith(Parameterized.class)
+public class UtilitiesTestParameterized {
+
+	private Utilities util;
+	private String input;
+	private String output;
+	
+	public UtilitiesTestParameterized(String input, String output) {
+		this.input = input;
+		this.output = output;
+	}
+
+	@Before
+	public void setup() {
+		util = new Utilities();
+		
+	}
+	
+	//Must return Collection  to be parameterized test
+	 @Parameterized.Parameters
+	  public static Collection<Object[]> testConditions() {
+	        return Arrays.asList(new Object[][] {
+	                {"ABCDEFF", "ABCDEF"},
+	                {"AB88EFFG", "AB8EFG"},
+	                {"112233445566", "123456"},
+	                {"A", "A"}
+	        });
+	    }
+	  
+	    @Test
+	    public void removePairs() throws Exception {
+	        assertEquals(output, util.removePairs(input));
+	    }
+}
+
+```

@@ -11,7 +11,9 @@ This repository is made with **Eclipse**, therefore it will include configuratio
 If the content sparked :fire: your interest, please consider buying the course and start learning. :book:
 
 [The Course at Udemy](https://www.udemy.com/java-the-complete-java-developer-course)   
+
 [The Learn Programming Academy](http://learnprogramming.academy)
+
 [Home Page of Maker](https://www.timbuchalka.com/)
 
 - Todo check typos and content more rich(.md)
@@ -51,7 +53,7 @@ Insert certificate here when completed
 
 ### Updated curriculum(transfer chapter under here and proceed this one)
 
-- [ ] [Section 24](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2024) - Debugging and Unit Testing **NEW and updated**
+- [x] [Section 24](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2024) - Debugging and Unit Testing **NEW and updated**
 
 - [ ] [Section 25](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2025) - Databases **NEW and updated** 
 

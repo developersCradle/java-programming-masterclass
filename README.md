@@ -2,7 +2,7 @@
 
 ![JAVA ENGINEER](pic.jpg)
 
-All course material from Java Programming. Java 17 will be used. Masterclass for Software Developers by **Tim Buchalka**
+All course material from Java Programming. Java 17 will be used. Masterclass for Software Developers by **Tim Buchalka**.
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -17,7 +17,15 @@ If the content sparked :fire: your interest, please consider buying the course a
 [Home Page of Maker](https://www.timbuchalka.com/)
 
 - Todo check typos and content more rich(.md)
-- Todo fix headers when proceeding into to them(Do headings after every chapters)
+- Todo luv2code JDBC driver tutorial
+- Todo connection leaks [Connection Leak](https://www.youtube.com/watch?v=FOQwsAQLseo) and [Connection leak 2](https://www.youtube.com/watch?v=xxtptg5ZoKA) and [JDBC tutorial](https://www.youtube.com/watch?v=ceAev_93p3s)
+    
+
+
+<!-- 
+Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
+?trk=public_profile_see-credential 
+-->
 
 Insert certificate here when completed
 
@@ -42,7 +50,6 @@ Insert certificate here when completed
 - [ ] [Section 15](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2015) - Concurrency in Java
 - [x] [Section 16](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2016) - Lambda Expressions
 - [ ] [Section 17](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2017) - Regular Expressions
-- [ ] Section 18 - Debugging and Unit Testing
 - [ ] Section 19 - Databases
 - [ ] Section 20 - Java Networking Programming
 - [ ] Section 21 - Java 9 Module System
@@ -53,8 +60,9 @@ Insert certificate here when completed
 
 ### Updated curriculum(transfer chapter under here and proceed this one)
 
-- [x] [Section 24](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2024) - Debugging and Unit Testing **NEW and updated**
 
-- [ ] [Section 25](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2025) - Databases **NEW and updated** 
+- [ ] [Section 18](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2018) - Back to a Few Nuts and Bolts TODO started fixing date bug, for Invian challenge.
 
-<!-- **TODO tee tästä myös luv2code JDBC AJURI OPAS** -->
+- [x] [Section 24](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2024) - Debugging and Unit Testing ✔️
+
+- [ ] [Section 42](#) - Databases - Old content for Java 11

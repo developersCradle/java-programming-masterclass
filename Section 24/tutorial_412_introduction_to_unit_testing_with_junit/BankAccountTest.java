@@ -13,7 +13,8 @@ public class BankAccountTest {
 	
 	@Test
 	public void withdraw() {
-		fail("This test has not yet been implemented");
+		
+		assertEquals("Some Random Message", 1, 0);
 	}
 
 	@Test

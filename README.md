@@ -65,4 +65,6 @@ Insert certificate here when completed
 
 - [x] [Section 24](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2024) - Debugging and Unit Testing ✔️
 
-- [ ] [Section 42](#) - Databases - Old content for Java 11
+#### Old content 
+
+- [ ] [Section 42](https://github.com/developersCradle/java-programming-masterclass/tree/master/Section%2042) - Databases - Old content for Java 11

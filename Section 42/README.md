@@ -28,9 +28,9 @@ Databases - Old content for Java 11
 - Db data in certain structure.
     - In case of **SQLite** there is master table containing this structure. Some can it call **sqlite_master** table.
 
-<img src="dbTerminology.JPG" alt="alt text" width="500"/>
+<img src="dbStructuredData.JPG" alt="alt text" width="500"/>
 
-1. **Table** is collection if related data. Here you can see there is structure in tables.
+- **Table** is collection if related data. Here you can see there is structure in tables.
 
 - There are databases **without** structure like **NoSQL**. [NoSQL](https://fi.wikipedia.org/wiki/NoSQL)
 
@@ -76,8 +76,8 @@ In Relational Database, Columns is often ment for name for **field**.
 
 1. It's common to have **linking table** to link data
     - **Advantage** of this the invoice table only contains data to **Invoices**. There is no **Customer** information anymore.
-- This is called **Normalisation** [Db Normalisation](https://en.wikipedia.org/wiki/Database_normalization)
-    - Db Normalisation is removing all unnecessarily data and irrelevant data. More this is done, **higher** the level normalisation. You can go level **6**, but most practical level is around level **3**.
+- This is called **Normalization** [Db Normalisation](https://en.wikipedia.org/wiki/Database_normalization)
+    - Db Normalization is removing all unnecessarily data and irrelevant data. More this is done, **higher** the level normalisation. You can go level **6**, but most practical level is around level **3**.
 - Example is this case is not high as it should be
     - Because we use **Customer Name** as the link between table.**If** Customer name changes(which is common to happen), we would need to update relevant tables.
 
@@ -151,45 +151,126 @@ In Relational Database, Columns is often ment for name for **field**.
 
 # Querying Data With SQL
 
-- TODO left here for refactoring
+- Starting with given db file(Which was downloaded) `sqlite3 music.db`.
 
-> **Mini Challenge**
-> Use the appropriate SQLite command to display the structure of the database
+> **Mini Challenge** 
+> Use the appropriate SQLite command to display the structure of the database.
 
-- Answer: `.schema`
+- Answer: `.schema`.
+
+<img src="challange1example.JPG" alt="alt text" width="600"/>
+
+- You can see file schema is printed from downloaded file.
+
+1. Also The naming the id with `_id` is **good habit** to start naming your database tables with this name. Some Java classes require databases require column`_id`. 
+
+- You can check now the state of data in db. `SELECT * FROM ALBUMS;`.
 
 > **Mini Challenge**
 > Find the title of album 367
 
-- Answer: `SELECT name FROM albums WHERE _id = 367;`
+- Answer: `SELECT name FROM albums WHERE _id = 367;`.
 
-- **Views** is common in most databases
+- We could used `SELECT * FROM albums WHERE _id = 3;`.
 
-- **Key** in table is an **Index**. Which speeds ups **searches** and **joins** in columns
-    - Ordering of rows are **undefined**
-        - Similar **maps** in Java
-        - **Relation database** is heavily based on **set theory**
+- **Key** in table is an **Index**. Which speeds ups **searches** and **joins** in columns.
+    - In **relational databases**, ordering of rows are **undefined**.
+        - Similar **maps** in Java.
+        - **Relation database** is heavily based on **set theory**.
 
-- There can be many keys in table, but one primary key
+- There can be many keys in table, but **one** primary key.
+    - And primary key, needs to be **indexed**.
 
 - [AutoIncrement In SQLite](https://www.sqlite.org/autoinc.html)
+
+# SQL Order by and Joins
+
+- If **Order** is **undefined** in relational database.
+    - We can tell query the order.
+
+- We can use to ignore case notation using following  `SELECT * FROM albums ORDER BY name COLLATE NOCASE;`.
+
+- And same with **ASC** or **DESC** `SELECT * FROM albums ORDER BY name COLLATE NOCASE DESC;`.
+
+- Then if you want only couple columns show, you could add more columns after `ORDER BY`
+`SELECT * FROM albums ORDER BY artist,name COLLATE NOCASE DESC;`.
 
 > **Mini Challenge**
 > List all the songs that the songs from the same album appear together in track order.
 
-- Answer: SELECT * FROM songs ORDER BY album, track
+- Answer: SELECT * FROM songs ORDER BY album, track.
 
-<img src="miniChallange.JPG" alt="alt text" width="500"/>
+<img src="miniChallange.JPG" alt="alt text" width="700"/>
 
-- Jäin 5:25 ja tähän minichallange
+<br>
+
+<img src="miniChallange2.JPG" alt="alt text" width="700"/>
+
+<br>
+
+<img src="miniChallange3.JPG" alt="alt text" width="700"/>
+
+- Making the query `SELECT songs.track, songs.title, albums.name FROM songs JOIN albums ON songs.album = albums._id;`
+    - You can see form what tables fields are in `songs.track`. You could leave up table name, if there is no ambiguity. Its **good habit** to prefix with table names.
+
+- Most common **JOIN** is **INNER JOINS**, by default join is **inner joins**.
+
+- Making the query `SELECT songs.track, songs.title, albums.name FROM songs INNER JOIN albums ON songs.album = albums._id;`.
+    - When using **JOINS**, its better to be more specific with join. Meaning better to use **INNER JOIN** syntax, since some databases don't abbreviated version one.
+
+# More Complex Joins
+
+> **Mini Challenge**
+> Produce list fo all artists, with their albums, in alphabetical order of artist name.
+
+- My answer: `SELECT artists.name, albums.name FROM albums INNER JOIN artists ON albums.artist = artists._id ORDER BY artists.name;`
+
+- We are making two **joins**.
+
+``` 
+
+SELECT artists.name, albums.name, songs.track FROM songs
+INNER JOIN albums ON songs.album = albums._id 
+INNER JOIN artists ON albums.artist = artists._id
+ORDER BY artists.name, albums.name, songs.track; 
+
+```
+- `ORDER BY` needs be after others.
+
+# Wildcards in Queries and Views
+
+- Wildcard in in query. **LIKE** and `%doctor%`;
+
+```
+
+SELECT artists.name, albums.name, songs.track FROM songs
+INNER JOIN albums ON songs.album = albums._id 
+INNER JOIN artists ON albums.artist = artists._id
+WHERE artists.name LIKE '%jefferson%'
+ORDER BY artists.name, albums.name, songs.track; 
+
+```
+
+- **Stored procedures**. Stored methods in databases.
+- SQLite is not client server. Its intended to embedded into programs, there fore SQLite does **not** support for **stored procedures**.
 
 
+- **Views** are like **virtual tables**, you cannot update data thought views, but you can query them. At least in **SQLite**.
+
+- Creating **View**
+```
+
+CREATE VIEW artist_list AS 
+SELECT artists.name, albums.name, songs.track, song.title FROM songs  
+INNER JOIN albums ON songs.album = albums._id 
+INNER JOIN artists ON albums.artist = artists._id
+ORDER BY artists.name, albums.name, songs.track; 
+
+```
 
 ### Chapter 444. Transactions
 
-
 - We can use **prepared statements** on **insert**, **update** or **delete**
-
 
 <img src="trancactions.jpg" alt="alt text" width="500"/>
 
@@ -210,6 +291,7 @@ In Relational Database, Columns is often ment for name for **field**.
 
 <img src="exampleTransactionNeed.jpg" alt="alt text" width="500"/>
 
+- todo 2
 - We would need to write extra code change back into original state. We need **Tranasactions**
 
 <img src="transactionUsageReason.jpg" alt="alt text" width="500"/>

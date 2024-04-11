@@ -4,7 +4,6 @@ Databases - Old content for Java 11
 
 # What I learned
 
-
 # Section Introduction
 
 <img src="overview.JPG" alt="alt text" width="500"/>
@@ -257,16 +256,129 @@ ORDER BY artists.name, albums.name, songs.track;
 
 - **Views** are like **virtual tables**, you cannot update data thought views, but you can query them. At least in **SQLite**.
 
-- Creating **View**
+- Creating **View**.
+
 ```
 
 CREATE VIEW artist_list AS 
-SELECT artists.name, albums.name, songs.track, song.title FROM songs  
+SELECT artists.name, albums.name, songs.track, songs.title FROM songs  
 INNER JOIN albums ON songs.album = albums._id 
 INNER JOIN artists ON albums.artist = artists._id
 ORDER BY artists.name, albums.name, songs.track; 
 
 ```
+
+- To use **View** `SELECT * FROM artist_list;`
+    - You can also filter this with `LIKE`;
+
+- These are good for **enforcing security** in your application.
+    - Like only for reading, now modifying.
+
+- Other good use case with **Views** that you can hide data like primary key. Example with `SELECT * FORM TABLE`;
+
+<img src="select.JPG" alt="alt text" width="500"/>
+
+- Creating secured **VIEW** `CREATE VIEW album_list AS SELECT name FROM albums ORDER BY name;`
+
+- If **View** was created as there is clashes of names. Table field name is being renamed, at least in SQLite.
+
+# Housekeeping and Final SQL Challenge
+
+- You can include **functions** for **SELECT**
+    - Example ` SELECT count(*) FROM albums;`
+
+<img src="challangeCleanUp.JPG" alt="alt text" width="500"/>
+
+<img src="challangeCleanUp2.JPG" alt="alt text" width="500"/>
+
+### My solutions for challenge:
+
+1.
+```
+SELECT songs.title ,songs.title FROM songs 
+INNER JOIN albums ON songs.album = albums._id
+WHERE albums.name = 'Forbidden';
+```
+
+2.
+```
+SELECT songs.track ,songs.title FROM songs 
+INNER JOIN albums ON songs.album = albums._id
+WHERE albums.name = 'Forbidden'
+ORDER BY songs.track;
+```
+
+3.
+```
+SELECT songs.title FROM songs 
+INNER JOIN albums ON songs.album = albums._id
+INNER JOIN artists ON albums.artist = artists._id WHERE artists.name = 'Deep Purple';
+```
+
+4.
+```
+UPDATE artists SET name = 'One Kitten' WHERE artists.name = 'Mehitabel';
+```
+
+5.
+```
+SELECT * FROM artists WHERE artists.name = 'One Kitten';
+```
+
+
+6.
+```
+SELECT title FROM artist_list WHERE artists = 'Aarosmith' ORDER  title;
+```
+
+7.
+```
+SELECT Count(title) FROM artist_list WHERE artist = 'Aerosmith';
+```
+
+8.
+```
+SELECT DISTINCT title FROM artist_list WHERE artists = 'Aerosmith' ORDER BY title;
+```
+
+9.
+```
+SELECT count(DISTINCT title) FROM artist_list WHERE artist = 'Aerosmith';
+```
+
+10.
+```
+SELECT count(DISTINCT album) FROM artist_list WHERE artist = 'Aerosmith';
+
+```
+
+# JDBC and SQLite GUI Browser
+
+<img src="jdbc.JPG" alt="alt text" width="500"/>
+
+<br>
+
+<img src="jdbc2.JPG" alt="alt text" width="500"/>
+
+<br>
+
+<img src="jdbc3.JPG" alt="alt text" width="500"/>
+
+<br>
+
+<img src="jdbc4.JPG" alt="alt tex t" width="500"/>
+
+<br>
+
+<img src="jdbc5.JPG" alt="alt tex t" width="500"/>
+
+1. **JDBC** is popular so the drivers are included in many libraries.
+
+<br>
+
+<img src="jdbc6.JPG" alt="alt tex t" width="500"/>
+
+
 
 ### Chapter 444. Transactions
 
@@ -281,11 +393,11 @@ ORDER BY artists.name, albums.name, songs.track;
 
 <img src="makingTransactionsSteps.jpg" alt="alt text" width="500"/>
 
-1. Put placeholders
-2. Make `PreparedStatement`
-3. Set **Placeholders** values
-4. We execute query using `executeQuery()` or `exectute()`
-5. We process results
+1. Put placeholders.
+2. Make `PreparedStatement`.
+3. Set **Placeholders** values.
+4. We execute query using `executeQuery()` or `exectute()`.
+5. We process results.
 
 - JDBS Connection class **auto commits** changes by default when we call `execute()` on **insert**, **update**, **delete**: It's not always what we want to. For example
 

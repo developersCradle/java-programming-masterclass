@@ -376,11 +376,164 @@ SELECT count(DISTINCT album) FROM artist_list WHERE artist = 'Aerosmith';
 
 <br>
 
-<img src="jdbc6.JPG" alt="alt tex t" width="500"/>
+<img src="jdbc6.JPG" alt="alt text" width="500"/>
+
+- [Jdbc Driver](https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.32.3.2/)
+    - There is many other JDBC drivers, but this one contains db inside. We will use this one.
+
+- We are using GUI to connect SQLite.
+
+- [SQLite browser](https://sqlitebrowser.org/)
+
+# Creating Databases With JDBC in Java
+
+- All databases need connection string to connect to database
+    - This form can **differ** to database to database
+    - Its common to have `JDBC:`
+
+- It can have connection attributes and users and passwords.
+
+- To check out what is required for connection driver
+
+- Connections **JDBC 4.0** `Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\databases\\testjava.db"); // Windows path`
+
+- We needs to have JDBC driver need to be inside class path.
+
+```
+Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\databases\\testjava.db"); // Windows path
+// Class.forName("org.sql.JDBC"); OLD way to establish.
+```
+
+- We configure **DriverManger** using SQLite. 
+
+```		
+		try {
+			Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\databases\\testjava.db"); // Windows path
+//			Class.forName("org.sql.JDBC");
+		} catch (SQLException e) {
+			System.out.println("Something went wrong: " + e.getMessage());
+		}
+		
+```
+
+- There is two main ways to establish connecting. 
+    - First one using **driver mana**.
+    - Other is using **Data Source Objects**.
+        - Allows **connections pooling**.
+        - Allows **distributed transactions**.
+        - Portable
+        - More complex, usually in EE environments.
+
+<img src="sqlLiteBeingCreated.JPG" alt="alt text" width="600"/>
+
+
+- Connection uses Database resources. Database resources should be closed when we don't need them. JVM closes them automatically, later tho.
+    - Remember to close connections when you don't need them.
+
+- Most common one latest is way to close resource is using **try-with-resource**.
+
+```
+
+try (Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\databases\\testjava.db")){
+			
+//			Class.forName("org.sql.JDBC");
+			Statement statement = conn.createStatement();
+			statement.execute("CREATE TABLE contacts (name TEXT, phone INTEGER, email TEXT)");
+			
+			
+			
+		} catch (SQLException e) {
+			System.out.println("Something went wrong: " + e.getMessage());
+		}
+		
+```
+
+#  JDBC Insert, Update, Delete
+
+-  You need to close **statements** and **connections** after don't need them.
+    - First close **statements** then closes **connections**. **Statement** is associated with connection.
+
+```
+
+try {
+			Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\databases\\testjava.db"); // Windows path
+//			Class.forName("org.sql.JDBC");
+			Statement statement = conn.createStatement();
+			statement.execute("CREATE TABLE IF NOT EXISTS contacts (name TEXT, phone INTEGER, email TEXT)");
+			
+			
+			
+			statement.close(); // Statements should be closed before connections
+			conn.close();		// Closing connections is important, but after statement is closed
+			
+		} catch (SQLException e) {
+			System.out.println("Something went wrong: " + e.getMessage());
+		}
+
+```
+
+- **Hard coding** SQL statements is not best to todo.
+    - We should not need to write table names into code query.
+
+- JDBC connections **default behavior** is to auto-commit changes to **database**.
+
+- When using `UPDATE` or `DELETE`, where clause **is needed!**.
+    - Example using **DELETE** `statement.execute("DELETE FROM contacts WHERE name = 'Joe'");`.
+
+- Looping trough **results!**. Every **ResultSet** has **cursor!**. Its not same as **db cursor!**.
+    - Every ResultSet has their own cursor!
+
+- **Statement** can have only **one** active **ResultSet**.
+
+```
+   statement.execute("SELECT * FROM contacts");
+   ResultSet results = statement.getResultSet();
+	    while(results.next()) {
+            System.out.println(results.getString("name") + " " +
+                results.getInt("phone") + " " +
+	            results.getString("email"));
+	            }
+	  results.close();		
+```
+
+- **ResultSet** is resource, we need to close it! `results.close();`.
+    - We have to close **ResultSet** before close **Statement**.
+
+- Its good practice to close **ResultsSet:s** and **Statements** ourself.
+
+# .executeQuery() and using Constants
+
+- We can use `executeQuery()` for less code, rather than `statement.execute("SELECT * FROM contacts");` and `ResultSet results = statement.getResultSet();`.
+
+```
+//		    statement.execute("SELECT * FROM contacts");
+//	        ResultSet results = statement.getResultSet();
+			ResultSet results = statement.executeQuery("SELECT * FROM contacts"); // We can also use executeQuery()
+```
+
+- We **should** use column indexes rather than **names** for retrieving data.
+
+- Its better use constant for SQL query and connection strings. `Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\databases\\testjava.db"); // Windows path`
+
+- Will be using such in this case:
+
+```
+	private static final String DB_NAME = "testjava.db";
+	private static final String CONNECTION_STRING = "jdbc:sqlite:C:\\databases\\" + DB_NAME;
+	
+	private static final String TABLE_CONTACS = "contacts";
+
+	private static final String COLUMN_NAME = "name";
+	private static final String COLUMN_PHONE = "phone";
+	private static final String COLUMN_EMAIL = "email";
+	
+```
+
+# The Music SQLite Database
 
 
 
-### Chapter 444. Transactions
+### Transactions
 
 - We can use **prepared statements** on **insert**, **update** or **delete**
 
@@ -391,7 +544,7 @@ SELECT count(DISTINCT album) FROM artist_list WHERE artist = 'Aerosmith';
 
 ### Making Transactions
 
-<img src="makingTransactionsSteps.jpg" alt="alt text" width="500"/>
+<img src="makingTransactionsSteps.jpg" aDt="alt text" width="500"/>
 
 1. Put placeholders.
 2. Make `PreparedStatement`.

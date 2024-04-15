@@ -531,6 +531,104 @@ try {
 
 # The Music SQLite Database
 
+- When we want to return list of Objects. We don't wan't to return list of **ResultSet**. We can return List of artist.
+
+# Write Java Query for Artists
+
+
+- Example of **datasource**, it does not care where data is from. Database, spreadsheet or flat file.
+    - We just query `queryArtists()`
+```
+
+package musicDb.model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Datasource {
+	
+
+    public static final String DB_NAME = "music.db";
+	private static final String CONNECTION_STRING = "jdbc:sqlite:C:\\databases\\" + DB_NAME;
+	
+    public static final String TABLE_ALBUMS = "albums";
+    public static final String COLUMN_ALBUM_ID = "_id";
+    public static final String COLUMN_ALBUM_NAME = "name";
+    public static final String COLUMN_ALBUM_ARTIST = "artist";
+
+    public static final String TABLE_ARTISTS = "artists";
+    public static final String COLUMN_ARTIST_ID = "_id";
+    public static final String COLUMN_ARTIST_NAME = "name";
+
+    public static final String TABLE_SONGS = "songs";
+    public static final String COLUMN_SONG_TRACK = "track";
+    public static final String COLUMN_SONG_TITLE = "title";
+    public static final String COLUMN_SONG_ALBUM = "album";
+
+    private Connection conn;
+
+    public boolean open() {
+        try {
+            conn = DriverManager.getConnection(CONNECTION_STRING);
+            return true;
+        } catch(SQLException e) {
+            System.out.println("Couldn't connect to database: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public void close() {
+        try {
+            if(conn != null) {
+                conn.close();
+            }
+        } catch(SQLException e) {
+            System.out.println("Couldn't close connection: " + e.getMessage());
+        }
+    }
+
+    public List<Artist> queryArtists() {
+
+        try(Statement statement = conn.createStatement();
+            ResultSet results = statement.executeQuery("SELECT * FROM " + TABLE_ARTISTS)) {
+
+            List<Artist> artists = new ArrayList<>();
+            while(results.next()) {
+                Artist artist = new Artist();
+                artist.setId(results.getInt(COLUMN_ARTIST_ID));
+                artist.setName(results.getString(COLUMN_ARTIST_NAME));
+                artists.add(artist);
+            }
+
+            return artists;
+
+        } catch(SQLException e) {
+            System.out.println("Query failed: " + e.getMessage());
+            return null;
+        }
+
+    }
+	
+}
+
+```
+
+- If we start using **Idex:s** instead of **ResultSet:s**. The index will be index of Result Set instead index of table.
+
+# Executing SQL in DB Browser
+
+- Column indexes are one based, like all in **JAVA**.
+
+- In **REAL LIFE** queries are based on **BUSINESS LOGIC**. Meaning queries are made match what is needed in UI!
+
+# Query Albums by Artist Method
+
+
 
 
 ### Transactions
@@ -552,7 +650,7 @@ try {
 4. We execute query using `executeQuery()` or `exectute()`.
 5. We process results.
 
-- JDBS Connection class **auto commits** changes by default when we call `execute()` on **insert**, **update**, **delete**: It's not always what we want to. For example
+- JDBC Connection class **auto commits** changes by default when we call `execute()` on **insert**, **update**, **delete**: It's not always what we want to. For example
 
 <img src="exampleTransactionNeed.jpg" alt="alt text" width="500"/>
 

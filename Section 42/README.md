@@ -421,11 +421,10 @@ Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\databases\\testja
     - Other is using **Data Source Objects**.
         - Allows **connections pooling**.
         - Allows **distributed transactions**.
-        - Portable
+        - Portable.
         - More complex, usually in EE environments.
 
-<img src="sqlLiteBeingCreated.JPG" alt="alt text" width="600"/>
-
+<img src="sqlLiteBeingCreated.JPG" alt="alt text" width="800"/>
 
 - Connection uses Database resources. Database resources should be closed when we don't need them. JVM closes them automatically, later tho.
     - Remember to close connections when you don't need them.
@@ -624,13 +623,112 @@ public class Datasource {
 
 - Column indexes are one based, like all in **JAVA**.
 
-- In **REAL LIFE** queries are based on **BUSINESS LOGIC**. Meaning queries are made match what is needed in UI!
+- In **REAL LIFE** queries are based on **BUSINESS LOGIC**. Meaning queries are made to match what is needed in UI!
+    - The order how queries can be done and should be done is:
+        - **First:** Make queries in **db tool**.
+        - **Second:** Make queries to **Java code**.
 
 # Query Albums by Artist Method
 
+- We can hardcode SQL queries, since its singleton.
+
+```
+    public static final String QUERY_ALBUMS_BY_ARTIST_START =
+            "SELECT " + TABLE_ALBUMS + '.' + COLUMN_ALBUM_NAME + " FROM " + TABLE_ALBUMS +
+                    " INNER JOIN " +TABLE_ARTISTS + " ON " + TABLE_ALBUMS + "." + COLUMN_ALBUM_ARTIST +
+                    " = " + TABLE_ARTISTS + "." + COLUMN_ARTIST_ID +
+                    " WHERE " + TABLE_ARTISTS + "." + COLUMN_ARTIST_NAME + " = \"";
+
+    public static final String QUERY_ALBUMS_BY_ARTIST_SORT =
+            " ORDER BY " + TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + " COLLATE NOCASE ";
+    
+```
+
+# Query Artists for Song method
+
+- We are using such queries.
+
+```
+    public static final String QUERY_ARTIST_FOR_SONG_START =
+            "SELECT " + TABLE_ARTISTS + "." + COLUMN_ARTIST_NAME + ", " +
+                    TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + ", " +
+                    TABLE_SONGS + "." + COLUMN_SONG_TRACK + " FROM " + TABLE_SONGS +
+                    " INNER JOIN " + TABLE_ALBUMS + " ON " +
+                    TABLE_SONGS + "." + COLUMN_SONG_ALBUM + " = " + TABLE_ALBUMS + "." + COLUMN_ALBUM_ID +
+                    " INNER JOIN " + TABLE_ARTISTS + " ON " +
+                    TABLE_ALBUMS + "." + COLUMN_ALBUM_ARTIST + " = " + TABLE_ARTISTS + "." + COLUMN_ARTIST_ID +
+                    " WHERE " + TABLE_SONGS + "." + COLUMN_SONG_TITLE + " = \"";
+
+    public static final String QUERY_ARTIST_FOR_SONG_SORT =
+            " ORDER BY " + TABLE_ARTISTS + "." + COLUMN_ARTIST_NAME + ", " +
+                    TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + " COLLATE NOCASE ";
 
 
+```
 
+
+# Result Set Meta Data
+
+- These techniques **depends** on database!
+
+- **Command Line** can query Schema from database.
+
+- We can query **meta data** from table, about table schema.
+    - Also possible to to query from **connection** class, but sometimes, like in SQLite, it won't return any data.
+
+- [ResultSetMetaData](https://docs.oracle.com/javase/8/docs/api/java/sql/ResultSetMetaData.html)
+
+- In code `ResultSetMetaData meta = results.getMetaData();`
+
+# Functions and Views
+
+- Example using **count()** from **JDBC**.
+
+- Its recommended to use **AS** in **SQL queries**.
+
+```
+
+        public int getCount(String table) {
+        String sql = "SELECT COUNT(*), MIN(_id) AS count FROM " + table;
+        try(Statement statement = conn.createStatement();
+            ResultSet results = statement.executeQuery(sql)) {
+
+            int count = results.getInt(1);
+            int min = results.getInt(2);
+
+            System.out.format("Count = %d\n, Min = %d\n", count, min);
+            return count;
+        } catch(SQLException e) {
+            System.out.println("Query failed: " + e.getMessage());
+            return -1;
+        }
+    }
+
+```
+
+- To use **Views** inside JDBC is no different than normal usage.
+
+- To make our view in **JDBC**
+
+```
+
+public boolean createViewForSongArtsists() {
+    	try(Statement statement = conn.createStatement()) {
+			
+    		
+    		statement.execute(CREATE_ARTIST_FOR_SONG_VIEW);
+    		
+    		return true;
+    		
+		} catch (Exception e) {
+			System.out.println("Create View failed: " + e.getMessage());
+			return false;
+		}
+    	
+    	
+    }
+    
+```
 ### Transactions
 
 - We can use **prepared statements** on **insert**, **update** or **delete**

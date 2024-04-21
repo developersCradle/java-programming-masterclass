@@ -417,23 +417,23 @@ Connection conn = DriverManager.getConnection("jdbc:sqlite:D:\\databases\\testja
 ```
 
 - There is two main ways to establish connecting. 
-    - First one using **driver mana**.
+    - First one using **driver manager**.
     - Other is using **Data Source Objects**.
         - Allows **connections pooling**.
         - Allows **distributed transactions**.
         - Portable.
-        - More complex, usually in EE environments.
+        - More complex, usually used in EE environments.
 
-<img src="sqlLiteBeingCreated.JPG" alt="alt text" width="800"/>
+<img src="sqlLiteBeingCreated.JPG" alt="test db here" width="900"/>
 
-- Connection uses Database resources. Database resources should be closed when we don't need them. JVM closes them automatically, later tho.
+- Connection uses Database resources. Database resources **should be closed** when we don't need them. JVM closes them automatically, later tho.
     - Remember to close connections when you don't need them.
 
 - Most common one latest is way to close resource is using **try-with-resource**.
 
 ```
 
-try (Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\databases\\testjava.db")){
+try (Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\databases\\testjava.db")){ //Here is is closing baked in when don't need it!
 			
 //			Class.forName("org.sql.JDBC");
 			Statement statement = conn.createStatement();
@@ -630,7 +630,7 @@ public class Datasource {
 
 # Query Albums by Artist Method
 
-- We can hardcode SQL queries, since its singleton.
+- We can hardcode SQL queries, since its inside singleton class, so no changes in queries.
 
 ```
     public static final String QUERY_ALBUMS_BY_ARTIST_START =
@@ -728,6 +728,141 @@ public boolean createViewForSongArtsists() {
     	
     }
     
+```
+
+- Querying Song Info.
+
+```
+
+ public List<SongArtist> querySongInfoView(String title) {
+        StringBuilder sb = new StringBuilder(QUERY_VIEW_SONG_INFO);
+        sb.append(title);
+        sb.append("\"");
+
+       System.out.println(sb.toString());
+
+       try (Statement statement = conn.createStatement();
+            ResultSet results = statement.executeQuery(sb.toString())) {
+
+           List<SongArtist> songArtists = new ArrayList<>();
+           while(results.next()) {
+               SongArtist songArtist = new SongArtist();
+               songArtist.setArtistName(results.getString(1));
+               songArtist.setAlbumName(results.getString(2));
+               songArtist.setTrack(results.getInt(3));
+               songArtists.add(songArtist);
+           }
+
+           return songArtists;
+
+       } catch(SQLException e) {
+           System.out.println("Query failed: " + e.getMessage());
+           return null;
+       }
+   }
+
+```
+
+# Write the Method to Query View
+
+- We can query **View** just as we can query **Table**.
+
+
+- Querying **Views** form JDBC code. These needs to saved before to db.
+
+```
+public List<SongArtist> querySongInfoView(String title) {
+        StringBuilder sb = new StringBuilder(QUERY_VIEW_SONG_INFO);
+        sb.append(title);
+        sb.append("\"");
+
+       System.out.println(sb.toString());
+
+       try (Statement statement = conn.createStatement();
+            ResultSet results = statement.executeQuery(sb.toString())) {
+
+           List<SongArtist> songArtists = new ArrayList<>();
+           while(results.next()) {
+               SongArtist songArtist = new SongArtist();
+               songArtist.setArtistName(results.getString(1));
+               songArtist.setAlbumName(results.getString(2));
+               songArtist.setTrack(results.getInt(3));
+               songArtists.add(songArtist);
+           }
+
+           return songArtists;
+
+       } catch(SQLException e) {
+           System.out.println("Query failed: " + e.getMessage());
+           return null;
+       }
+   }
+
+```
+
+- SQL queries needs to be compiled in format where database can understand.
+
+- **SQL statements** are **compiled** when ever we perform queries.
+    - It will matter in **bigger enterprise** actions. Where there is thousands of connections
+
+# SQL Injection Attacks and Prepared Statements
+
+- Performing SQL injection attack. User can input **SQL** code where it should not be inputting.
+
+<img src="performingSqlInjectionAttack.JPG" alt="alt text" width="700"/>
+
+1. We can input SQL injection code.
+2. It will return, in this case all the songs! 
+
+- We can protect against this using **prepared query**. Example below, we are using `?` for **placeholder mark**.
+
+```
+    public static final String QUERY_VIEW_SONG_INFO_PREP = "SELECT " + COLUMN_ARTIST_NAME + ", " +
+            COLUMN_SONG_ALBUM + ", " + COLUMN_SONG_TRACK + " FROM " + TABLE_ARTIST_SONG_VIEW +
+            " WHERE " + COLUMN_SONG_TITLE + " = ?";
+```
+
+- `?` will be understand to have single value.
+
+- We wan't only one prepared query, since we don't want it to compile every time. 
+
+- We are using **PreparedStatement** `querySongInfoView.setString(1, title);`. **Variable** and **placeholder**.
+    - Here we referring first occupance of `?`.
+
+- When we close **Statement**
+    - All associated **ResultSets** will be closed automatically.
+
+- If we **re-use** **Statement** all existing **ResultSets** will closed!
+    - This is very **common** pattern!
+
+- There is **specific way** to close resources. Last we should close **Connection** last, because we need to **Open Connections** to close statements.
+
+- In general we close resources in **reverse order** which they were **opened**.
+
+- In **PreparedStatements** values are treated as **literal values**, not as **SQL statements**.
+
+
+- Example closing closing connections resources.
+
+```
+
+    public void close() {
+        try {
+        	
+        	if (querySongInfoView != null) {
+        		querySongInfoView.close();
+				
+			}
+        	
+        	//Statement should be last closed()
+            if(conn != null) {
+                conn.close();
+            }
+        } catch(SQLException e) {
+            System.out.println("Couldn't close connection: " + e.getMessage());
+        }
+    }
+
 ```
 ### Transactions
 

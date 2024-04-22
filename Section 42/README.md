@@ -829,7 +829,7 @@ public List<SongArtist> querySongInfoView(String title) {
 - We are using **PreparedStatement** `querySongInfoView.setString(1, title);`. **Variable** and **placeholder**.
     - Here we referring first occupance of `?`.
 
-- When we close **Statement**
+- When we close **Statement**.
     - All associated **ResultSets** will be closed automatically.
 
 - If we **re-use** **Statement** all existing **ResultSets** will closed!
@@ -841,8 +841,7 @@ public List<SongArtist> querySongInfoView(String title) {
 
 - In **PreparedStatements** values are treated as **literal values**, not as **SQL statements**.
 
-
-- Example closing closing connections resources.
+- Example closing connections resources.
 
 ```
 
@@ -864,14 +863,17 @@ public List<SongArtist> querySongInfoView(String title) {
     }
 
 ```
-### Transactions
+
+# Transactions
+
+- Values are that we can post phone for compilation are values itself. SQL itself can be hardcoded.
 
 - We can use **prepared statements** on **insert**, **update** or **delete**
 
 <img src="trancactions.jpg" alt="alt text" width="500"/>
 
-- Better performance 
-- Better protection against SQL injection attacks
+- Better performance.
+- Better protection against SQL injection attacks, but not from all kind of attacks!
 
 ### Making Transactions
 
@@ -880,31 +882,30 @@ public List<SongArtist> querySongInfoView(String title) {
 1. Put placeholders.
 2. Make `PreparedStatement`.
 3. Set **Placeholders** values.
-4. We execute query using `executeQuery()` or `exectute()`.
+4. We execute query using `executeQuery()` or `execute()`.
 5. We process results.
 
 - JDBC Connection class **auto commits** changes by default when we call `execute()` on **insert**, **update**, **delete**: It's not always what we want to. For example
 
 <img src="exampleTransactionNeed.jpg" alt="alt text" width="500"/>
 
-- todo 2
-- We would need to write extra code change back into original state. We need **Tranasactions**
+- We would need to write extra code change back into original state. We need **Transactions**.
 
 <img src="transactionUsageReason.jpg" alt="alt text" width="500"/>
 
-- In **transaction** world we will use name `commit` than `save`
+- In **transaction** world we will use name `commit` than `save`.
 
 <img src="moreAboutTransctions.jpg" alt="alt text" width="500"/>
 
 ## ACID-compliant 
 
-1. **A**tomicity
-2. **C**onsistency
+1. **A**tomicity.
+2. **C**onsistency.
 
 <img src="moreAboutTransctions2.jpg" alt="alt text" width="500"/>
 
-3. **I**solation
-4. **D**urability
+3. **I**solation.
+4. **D**urability.
 
 <img src="transActions.jpg" alt="alt text" width="500"/>
 
@@ -914,13 +915,30 @@ public List<SongArtist> querySongInfoView(String title) {
 
 - **SQLlite**
 
-1. `BEGIN TRANSACTION` Manually start transaction 
-2. `END TRANSACTION` Manually end transaction
-3. `COMMIT` Commit to changes 
-4. `ROLLBACK` Rolls back uncommitted changes. Work on uncommitted changes
+1. `BEGIN TRANSACTION` Manually start transaction.
+2. `END TRANSACTION` Manually end transaction.
+3. `COMMIT` Commit to changes.
+4. `ROLLBACK` Rolls back uncommitted changes. Work on uncommitted changes.
 
 - If connection closes **before** **committing**, changes are rolled back.
 
+<img src="transActions2.jpg" alt="alt text" width="500"/>
+
+- When using **JDBC** we don't use **transaction-related SQL** like previously shown. What we do instead is below.
+
 <img src="transActionStepsInSQLlite.jpg" alt="alt text" width="500"/>
 
-- Tee loppuun harjoituksen kanssa
+- Game plan, for implementing **Transaction**.
+
+<img src="trancactionsSteps.jpg" alt="alt text" width="500"/>
+
+- We want all these action take place inside transaction.
+
+- When inserting new data, we need to update **Views** also! 
+
+- Example of transaction what we are making.
+
+<img src="followingTransAction.JPG" alt="alt text" width="500"/>
+
+
+# Inserting Records With JDBC
